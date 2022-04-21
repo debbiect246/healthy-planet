@@ -9,3 +9,11 @@ app = Flask(__name__)
 def index():
     """ Basic route """
     return render_template("index.html")
+
+
+if __name__ == "__main__":
+    app.run(
+        host=os.environ.get("IP", "0.0.0.0"),
+        port=int(os.environ.get("PORT", "5000")),
+        debug=True
+    )
