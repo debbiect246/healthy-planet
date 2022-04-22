@@ -7,7 +7,6 @@ __pycache__/
 node_modules/
 .github/
 cloudinary_python.txt
-<<<<<<< HEAD
 
 # Environments 
 .env 
@@ -26,5 +25,3 @@ venv.bak/
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
-=======
->>>>>>> eaa4b6551dcc402829f17abd8c519d5e2e954ca4
