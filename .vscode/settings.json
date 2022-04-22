@@ -23,8 +23,12 @@
    "files.autoSave": "off",
    "workbench.colorTheme": "Visual Studio Dark",
    "terminal.integrated.gpuAcceleration": "canvas",
+<<<<<<< HEAD
    "editor.defaultFormatter": "HookyQR.beautify",
    "[python]": {
       "editor.defaultFormatter": "ms-python.python"
    }
+=======
+   "editor.defaultFormatter": "HookyQR.beautify"
+>>>>>>> eaa4b6551dcc402829f17abd8c519d5e2e954ca4
 }
