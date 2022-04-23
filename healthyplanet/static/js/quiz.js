@@ -124,7 +124,7 @@ $(function () {
 	$('#btn-submit').click(function (e) {
 		e.preventDefault();
 		submitAnswer();
-		
+
 	});
 
 	/**
@@ -136,7 +136,7 @@ $(function () {
 			$("#quiz-page").removeClass("hidden");
 			$("#start-again-btn-div").removeClass("hidden");
 			$("#btn-submit").removeClass("hidden");
-			
+
 			// Inject template HTML into fieldset element
 			$('#current-question').html(questionArray.title);
 			$('#answer-options').html(`
@@ -167,6 +167,7 @@ $(function () {
 	 */
 	function submitAnswer() {
 		checkAnswerResult();
+		console.log(runningQuestion);
 		showNextQuestion();
 	}
 
@@ -174,11 +175,12 @@ $(function () {
 	 * Check which answer-option has been checked, and record the result. Otherwise display an alert if nothing is selected.
 	 */
 	function checkAnswerResult() {
-		console.log(questionArray.answer)
-		if ($('input:checked').val() == questionArray.answer) {
+		if (!$("input:checked").val()) {
+			alert('Oops! Please pick an option and try again!');
+		} else if ($("input:checked").val() == questionArray.answer) {
 			score += 1;
+			runningQuestion += 1;
 		}
-		console.log(score);
 	}
 
 	/**
