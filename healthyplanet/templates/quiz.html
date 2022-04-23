@@ -4,3 +4,7 @@
     <h1>Quiz</h1>
     <h2>Test your recycling knowledge with this interactive quiz!</h2>
 {% endblock%}
+
+{% block scripts %}
+    <script src="{{url_for('static', filename='js/quiz.js')}}"></script>
+{% endblock %}
