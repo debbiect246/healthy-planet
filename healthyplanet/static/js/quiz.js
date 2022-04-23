@@ -14,122 +14,111 @@ $(function () {
 
 	questions = [{
 			"title": "Question 1",
-			"option1": "A",
-			"option2": "B",
-			"option3": "C",
-			"option4": "C",
+			"optionA": "A",
+			"optionB": "B",
+			"optionC": "C",
+			"optionD": "C",
 			"answer": "B"
 		},
 		{
 			"title": "Question 2",
-			"option1": "E",
-			"option2": "F",
-			"option3": "G",
-			"option4": "H",
+			"optionA": "E",
+			"optionB": "F",
+			"optionC": "G",
+			"optionD": "H",
 			"answer": "G"
 		},
 		{
 			"title": "",
-			"option1": "",
-			"option2": "",
-			"option3": "",
-			"option4": "",
+			"optionA": "",
+			"optionB": "",
+			"optionC": "",
+			"optionD": "",
 			"answer": ""
 		},
 		{
 			"title": "",
-			"option1": "",
-			"option2": "",
-			"option3": "",
-			"option4": "",
+			"optionA": "",
+			"optionB": "",
+			"optionC": "",
+			"optionD": "",
 			"answer": ""
-		},
-		{
+		}, {
 			"title": "",
-			"option1": "",
-			"option2": "",
-			"option3": "",
-			"option4": "",
+			"optionA": "",
+			"optionB": "",
+			"optionC": "",
+			"optionD": "",
 			"answer": ""
-		},
-		{
+		}, {
 			"title": "",
-			"option1": "",
-			"option2": "",
-			"option3": "",
-			"option4": "",
+			"optionA": "",
+			"optionB": "",
+			"optionC": "",
+			"optionD": "",
 			"answer": ""
-		},
-		{
+		}, {
 			"title": "",
-			"option1": "",
-			"option2": "",
-			"option3": "",
-			"option4": "",
+			"optionA": "",
+			"optionB": "",
+			"optionC": "",
+			"optionD": "",
 			"answer": ""
-		},
-		{
+		}, {
 			"title": "",
-			"option1": "",
-			"option2": "",
-			"option3": "",
-			"option4": "",
+			"optionA": "",
+			"optionB": "",
+			"optionC": "",
+			"optionD": "",
 			"answer": ""
-		},
-		{
+		}, {
 			"title": "",
-			"option1": "",
-			"option2": "",
-			"option3": "",
-			"option4": "",
+			"optionA": "",
+			"optionB": "",
+			"optionC": "",
+			"optionD": "",
 			"answer": ""
-		},
-		{
+		}, {
 			"title": "",
-			"option1": "",
-			"option2": "",
-			"option3": "",
-			"option4": "",
+			"optionA": "",
+			"optionB": "",
+			"optionC": "",
+			"optionD": "",
 			"answer": ""
-		},
-		{
+		}, {
 			"title": "",
-			"option1": "",
-			"option2": "",
-			"option3": "",
-			"option4": "",
+			"optionA": "",
+			"optionB": "",
+			"optionC": "",
+			"optionD": "",
 			"answer": ""
-		},
-		{
+		}, {
 			"title": "",
-			"option1": "",
-			"option2": "",
-			"option3": "",
-			"option4": "",
+			"optionA": "",
+			"optionB": "",
+			"optionC": "",
+			"optionD": "",
 			"answer": ""
-		},
-		{
+		}, {
 			"title": "",
-			"option1": "",
-			"option2": "",
-			"option3": "",
-			"option4": "",
+			"optionA": "",
+			"optionB": "",
+			"optionC": "",
+			"optionD": "",
 			"answer": ""
-		},
-		{
+		}, {
 			"title": "",
-			"option1": "",
-			"option2": "",
-			"option3": "",
-			"option4": "",
+			"optionA": "",
+			"optionB": "",
+			"optionC": "",
+			"optionD": "",
 			"answer": ""
-		},
-		{
+		}, {
 			"title": "",
-			"option1": "",
-			"option2": "",
-			"option3": "",
-			"option4": "",
+			"optionA": "",
+			"optionB": "",
+			"optionC": "",
+			"optionD": "",
 			"answer": ""
 		}
 	]
@@ -138,12 +127,12 @@ $(function () {
 	const answerOptions = $("#answer-options");
 	const lastQuestion = questions.length;
 	let runningQuestion = 0
-	
-	$("#start-quiz-btn").click(function() {
+
+	$("#start-quiz-btn").click(function () {
 		showNextQuestion();
 	});
 
-	$('btn-submit').click(function() {
+	$('btn-submit').click(function () {
 		preventDefault();
 		submitAnswer();
 	});
@@ -158,10 +147,10 @@ $(function () {
 			$("#quiz-page").removeClass("hidden");
 			$("#start-again-btn-div").removeClass("hidden");
 			$("#btn-submit").removeClass("hidden");
-
+			
 			// Inject template HTML into fieldset element
-			currentQuestion.innerHTML = questionArray.title;
-			answerOptions.innerHTML = `
+			$('#current-question').html(questionArray.title);
+			$('#answer-options').html(`
 			<input class="answer-option" type="radio" name="answers" id="option-1" required>
 			<label class="answer-option" for="option-1">
 			<span data-hover="${questionArray.optionA}">${questionArray.optionA}</span>
@@ -178,7 +167,7 @@ $(function () {
 			<label class="answer-option" for="option-4">
 			<span data-hover="${questionArray.optionD}">${questionArray.optionD}</span>
 			</label>
-			`;
+		`);
 		} else {
 			showResult();
 		}
@@ -211,11 +200,11 @@ $(function () {
 	}
 
 	// Event listener to restart the quiz if "start again" button is clicked
-	$("#start-again-btn").click(function() {
+	$("#start-again-btn").click(function () {
 		startAgainFromMenu()
 	});
 	// Event listener to initiate instructions page and hide other content if button is clicked on the homepage
-	$("#instructions-btn").click(function() {
+	$("#instructions-btn").click(function () {
 		$("#home-page").classList.add("hidden");
 		$("#content-container").style.position = "relative";
 	});
