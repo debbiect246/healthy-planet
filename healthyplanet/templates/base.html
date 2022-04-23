@@ -59,8 +59,12 @@
                 </div>
             </div>
         </nav>
-        <div class="hero-img">
+        <div class="hero-img position-relative">
             <img src="{{url_for('static', filename='images/hero-img.jpg')}}" alt="Hero images" />
+            <div class="hero-overlay">
+                <h1 class="text-center hero-title">{{ hero_title }}</h1>
+            </div>
+            
         </div>
     </header>
     <main>
