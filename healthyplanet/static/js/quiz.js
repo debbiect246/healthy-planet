@@ -114,7 +114,7 @@ $(function () {
 
 	const lastQuestion = questions.length;
 	let runningQuestion = 0;
-	score = 0;
+	let score = 0;
 	console.log(`Running Question: ${runningQuestion}, Score: ${score}`);
 	$("#start-quiz-btn").click(function () {
 		showNextQuestion();
@@ -184,6 +184,10 @@ $(function () {
 		}
 	}
 
+
+	function displayResults() {
+		
+	}
 	/**
 	 * Resets all scores, hides results-page and quiz-page, and returns to the main screen
 	 */
