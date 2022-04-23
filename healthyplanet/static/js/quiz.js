@@ -186,7 +186,7 @@ $(function () {
 
 
 	function displayResults() {
-
+		
 	}
 	/**
 	 * Resets all scores, hides results-page and quiz-page, and returns to the main screen
