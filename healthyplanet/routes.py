@@ -27,7 +27,7 @@ def pledges():
     return render_template("pledges.html")
 
 
-@app.route("/plastic-stories")
-def plastic_stories():
+@app.route("/environmental-stories")
+def environmental_stories():
     """ Basic route """
-    return render_template("plastic-stories.html")
+    return render_template("environmental-stories.html")
