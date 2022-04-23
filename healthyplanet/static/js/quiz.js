@@ -123,7 +123,6 @@ $(function () {
 	$('#btn-submit').click(function (e) {
 		e.preventDefault();
 		submitAnswer();
-
 	});
 
 	/**
@@ -166,7 +165,7 @@ $(function () {
 	/**
 	 * When the submit button is clicked call the relavent functions to progress the quiz
 	 */
-	function submitAnswer(questionArray) {
+	function submitAnswer() {
 		checkAnswerResult();
 		console.log(runningQuestion);
 		runningQuestion += 1;
@@ -200,10 +199,5 @@ $(function () {
 	// Event listener to restart the quiz if "start again" button is clicked
 	$("#start-again-btn").click(function () {
 		startAgainFromMenu()
-	});
-	// Event listener to initiate instructions page and hide other content if button is clicked on the homepage
-	$("#instructions-btn").click(function () {
-		$("#home-page").classList.add("hidden");
-		$("#content-container").style.position = "relative";
 	});
 });
