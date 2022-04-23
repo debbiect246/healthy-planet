@@ -123,7 +123,6 @@ $(function () {
 	$('#btn-submit').click(function (e) {
 		e.preventDefault();
 		submitAnswer();
-
 	});
 
 	/**
@@ -166,7 +165,7 @@ $(function () {
 	/**
 	 * When the submit button is clicked call the relavent functions to progress the quiz
 	 */
-	function submitAnswer(questionArray) {
+	function submitAnswer() {
 		checkAnswerResult();
 		console.log(runningQuestion);
 		runningQuestion += 1;
@@ -187,7 +186,7 @@ $(function () {
 
 
 	function displayResults() {
-		
+
 	}
 	/**
 	 * Resets all scores, hides results-page and quiz-page, and returns to the main screen
