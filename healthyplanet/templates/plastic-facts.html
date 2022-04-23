@@ -79,7 +79,7 @@ Plastic Facts
         <div class="col-md-8">
             <div class="card  shadow-sm text-center">
                 <div class="card-body">
-                    <h5 class="display-6"><span class="d-inline d-md-none">4. </span><span class="small">About</span> <span class="fw-bold">55 percent</span><span class="small"> of all the plastic ever produced has been </span><span class="fw-bold">thrown away</span></h5>
+                    <h5 class="display-6 mb-3"><span class="d-inline d-md-none">4. </span><span class="small">About</span> <span class="fw-bold">55 percent</span><span class="small"> of all the plastic ever produced has been </span><span class="fw-bold">thrown away</span></h5>
                         <div class="text-center mx-auto pie-chart">
                             <canvas id="plastic-decomposition" class="m-2 "></canvas>
                         </div>
@@ -94,6 +94,93 @@ Plastic Facts
         <div class="d-none d-md-block col-md-4">
             <div class="display-1 text-start fact-number">
                 4
+            </div>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="d-none d-md-block col-md-4">
+            <div class="display-1 text-end fact-number">
+                5
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card shadow-sm text-center">
+                <div class="card-body">
+                    <h5 class="display-6"><span class="d-inline d-md-none">5. </span><span class="small">The Great Pacific Garbage Patch covers </span><span class="fw-bold">1.6 million square kilometers</span><span class="small"> in the Pacific Ocean</span></h5>
+                    <img src="{{ url_for('static', filename='images/ocean-plastic.jpg')}}"
+                        class="card-img-top p-3 fact-img" alt="A plastic bottle in the ocean">
+                    <p class="card-text fs-3">It's three times the size of France and is just one of five huge collections of rubbish that have formed from the <strong>8 million tonnes</strong> of plastic end up in our oceans each year.</p>
+                </div>
+                <div class="card-footer text-start">
+                    <small class="text-muted">Source: <a href="https://theoceancleanup.com/great-pacific-garbage-patch/"
+                            target="_blank">The Ocean Cleanup</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-md-8">
+            <div class="card  shadow-sm text-center">
+                <div class="card-body">
+                    <h5 class="display-6"><span class="d-inline d-md-none">6. </span><span class="small">Packaging accounts for </span><span class="fw-bold">141 million tonnes</span><span class="small"> of plastic waste per year</span></h5>
+                        <div class="text-center mx-auto">
+                            <canvas id="plastic-waste" class="m-2 "></canvas>
+                        </div>
+                    <p class="card-text fs-3">Packaging is by far the biggest contributor to plastic waste each year. Plastic packaging is usually used for 6 months or less before being thrown away.</p>
+                </div>
+                <div class="card-footer text-start">
+                    <small class="text-muted">Source: <a href="https://ourworldindata.org/plastic-pollution"
+                        target="_blank">Our World In Data</a>, data from 2015</small>
+                </div>
+            </div>
+        </div>
+        <div class="d-none d-md-block col-md-4">
+            <div class="display-1 text-start fact-number">
+                6
+            </div>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="d-none d-md-block col-md-4">
+            <div class="display-1 text-end fact-number">
+                7
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card shadow-sm text-center">
+                <div class="card-body">
+                    <h5 class="display-6"><span class="d-inline d-md-none">7. </span><span class="small">By 2050, the oceans could contain </span><span class="fw-bold">more plastic than fish</span></h5>
+                    <img src="{{ url_for('static', filename='images/fish-ring.svg')}}"
+                        class="card-img-top p-3 small-svg" alt="Fish caught in six pack ring">
+                    <p class="card-text fs-3">If current trends continue, there could be <strong>1 tonne of plastic for every 3 tonnes of fish</strong> by 2025, and <strong>more plastic than fish</strong> by 2050.</p>
+                </div>
+                <div class="card-footer text-start">
+                    <small class="text-muted">Source: <a href="https://www3.weforum.org/docs/WEF_The_New_Plastics_Economy.pdf"
+                            target="_blank">World Economic Forum</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-md-8">
+            <div class="card  shadow-sm text-center">
+                <div class="card-body">
+                    <h5 class="display-6"><span class="d-inline d-md-none">8. </span><span class="small">Most of the plastic that's been dumped into the ocean </span><span class="fw-bold">is missing</span></h5>
+                        <div class="text-center mx-auto">
+                            <img src="{{ url_for('static', filename='images/missing-plastic.svg')}}"
+                                class="card-img-top p-3 small-svg" alt="Ocean plastic polution is missing">
+                        </div>
+                    <p class="card-text fs-3">We can see more than <strong>250,000 tonnes</strong> of waste plastic in the ocean, but we know that <strong>10 million tonnes</strong> ends up in the ocean each year. Scientists aren't sure what's happened to the missing plastic.</p>
+                </div>
+                <div class="card-footer text-start">
+                    <small class="text-muted">Source: <a href="https://physicsworld.com/a/the-search-for-the-missing-plastic/"
+                        target="_blank">Physics World</a></small>
+                </div>
+            </div>
+        </div>
+        <div class="d-none d-md-block col-md-4">
+            <div class="display-1 text-start fact-number">
+                8
             </div>
         </div>
     </div>
