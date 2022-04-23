@@ -80,10 +80,89 @@ footer {
 
 .quiz-box {
   margin-top: 20px;
+  margin-bottom: 20px;
   padding: 40px;
   width: 90%;
   border-radius: 10px;
   box-shadow: -1px 8px 15px 0px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: -1px 8px 15px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: -1px 8px 15px 0px rgba(0, 0, 0, 0.5);
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+  position: absolute;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.answer-option:checked+label,
+.answer-option:not(:checked)+label {
+  position: relative;
+  display: inline-block;
+  padding: 5px 2px;
+  width: 100%;
+  height: 35px;
+  font-size: 16px;
+  border: 3px solid #18b7be;
+  border-radius: 100px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 300ms linear;
+}
+
+.answer-option:not(:checked)+label {
+  background-color: #F9F7F0;
+}
+
+.answer-option:not(:checked):hover+label:hover {
+  color: black;
+  background-color: #18b7be;
+}
+
+.answer-option:checked+label::before,
+.answer-option:not(:checked)+label::before,
+.quiz-btn::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: #18b7be;
+  z-index: -1;
+  transition: all 300ms linear;
+}
+
+.answer-option:checked+label span,
+.answer-option:not(:checked)+label span {
+  position: relative;
+  display: block;
+}
+
+.answer-option:checked+label span::before,
+.answer-option:not(:checked)+label span::before,
+.quiz-btn::before {
+  position: absolute;
+  content: attr(data-hover);
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  color: #F9F7F0;
+  -moz-transition: max-height 0.3s;
+  transition: max-height 0.3s;
+
+}
+
+.answer-option:not(:checked)+label span::before,
+.quiz-btn::before {
+  max-height: 0;
+}
+
+.answer-option:checked+label span::before,
+.quiz-btn::before {
+  max-height: 100%;
 }
