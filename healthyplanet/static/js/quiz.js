@@ -2,14 +2,14 @@ $(function () {
 	console.log("DOM fully loaded and parsed");
 
 	questions = [{
-			"title": "Question 1",
-			"optionA": "A",
-			"optionB": "B",
-			"optionC": "C",
-			"optionD": "D",
+			"type": "tf",
+			"title": "Plastic doesn't need to be rinsed and emptied before it's recycled.",
+			"optionA": "True",
+			"optionB": "False",
 			"answer": "B"
 		},
 		{
+			"type": "multi",
 			"title": "Question 2",
 			"optionA": "E",
 			"optionB": "F",
@@ -116,6 +116,7 @@ $(function () {
 	let runningQuestion = 0;
 	let score = 0;
 	$("#start-quiz-btn").click(function () {
+		console.log("clicked")
 		showNextQuestion();
 	});
 
@@ -134,29 +135,42 @@ $(function () {
 			$("#quiz-page").removeClass("hidden");
 			$("#start-again-btn-div").removeClass("hidden");
 			$("#btn-submit").removeClass("hidden");
-
+			console.log(questionArray.type)
 			// Inject template HTML into fieldset element
 			$('#current-question').html(questionArray.title);
-			$('#answer-options').html(`
-			<input class="answer-option" type="radio" name="answers" id="option-1" value="${questionArray.optionA}"required>
-			<label class="answer-option" for="option-1">
-			<span data-hover="${questionArray.optionA}">${questionArray.optionA}</span>
-			</label>
-			<input class="answer-option" type="radio" name="answers" id="option-2" value="${questionArray.optionB}">
-			<label class="answer-option" for="option-2">							
-			<span data-hover="${questionArray.optionB}">${questionArray.optionB}</span>
-			</label>
-			<input class="answer-option" type="radio" name="answers" id="option-3" value="${questionArray.optionC}">
-			<label class="answer-option" for="option-3">
-			<span data-hover="${questionArray.optionC}">${questionArray.optionC}</span>
-			</label>
-			<input class="answer-option" type="radio" name="answers" id="option-4" value="${questionArray.optionD}">
-			<label class="answer-option" for="option-4">
-			<span data-hover="${questionArray.optionD}">${questionArray.optionD}</span>
-			</label>
-		`);
-		} else {
-			displayResults();
+			if (questionArray.type === "multi") {
+				$('#answer-options').html(`
+				<input class="answer-option" type="radio" name="answers" id="option-1" value="${questionArray.optionA}"required>
+				<label class="answer-option" for="option-1">
+				<span data-hover="${questionArray.optionA}">${questionArray.optionA}</span>
+				</label>
+				<input class="answer-option" type="radio" name="answers" id="option-2" value="${questionArray.optionB}">
+				<label class="answer-option" for="option-2">							
+				<span data-hover="${questionArray.optionB}">${questionArray.optionB}</span>
+				</label>
+				<input class="answer-option" type="radio" name="answers" id="option-3" value="${questionArray.optionC}">
+				<label class="answer-option" for="option-3">
+				<span data-hover="${questionArray.optionC}">${questionArray.optionC}</span>
+				</label>
+				<input class="answer-option" type="radio" name="answers" id="option-4" value="${questionArray.optionD}">
+				<label class="answer-option" for="option-4">
+				<span data-hover="${questionArray.optionD}">${questionArray.optionD}</span>
+				</label>
+			`);
+			} else if (questionArray.type === "tf") {
+				$('#answer-options').html(`
+				<input class="answer-option" type="radio" name="answers" id="option-1" value="${questionArray.optionA}"required>
+				<label class="answer-option" for="option-1">
+				<span data-hover="${questionArray.optionA}">${questionArray.optionA}</span>
+				</label>
+				<input class="answer-option" type="radio" name="answers" id="option-2" value="${questionArray.optionB}">
+				<label class="answer-option" for="option-2">							
+				<span data-hover="${questionArray.optionB}">${questionArray.optionB}</span>
+				</label>
+			`)
+			} else {
+				displayResults();
+			};
 		}
 	}
 
