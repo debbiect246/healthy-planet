@@ -113,10 +113,9 @@ $(function () {
 	]
 
 	const lastQuestion = questions.length;
-	let runningQuestion = 0
-	const questionArray = questions[runningQuestion];
+	let runningQuestion = 0;
 	score = 0;
-
+	console.log(`Running Question: ${runningQuestion}, Score: ${score}`);
 	$("#start-quiz-btn").click(function () {
 		showNextQuestion();
 	});
@@ -131,7 +130,9 @@ $(function () {
 	 * Display the "quiz-page" html, show each question in order if there are ny left otherwise call the collectResultsAndDisplayHouse.
 	 */
 	function showNextQuestion() {
+		console.log(`Running Question: ${runningQuestion}, Score: ${score}`);
 		if (runningQuestion < lastQuestion) {
+			const questionArray = questions[runningQuestion]
 			$("#home-page").addClass("hidden");
 			$("#quiz-page").removeClass("hidden");
 			$("#start-again-btn-div").removeClass("hidden");
@@ -165,9 +166,10 @@ $(function () {
 	/**
 	 * When the submit button is clicked call the relavent functions to progress the quiz
 	 */
-	function submitAnswer() {
+	function submitAnswer(questionArray) {
 		checkAnswerResult();
 		console.log(runningQuestion);
+		runningQuestion += 1;
 		showNextQuestion();
 	}
 
@@ -175,11 +177,11 @@ $(function () {
 	 * Check which answer-option has been checked, and record the result. Otherwise display an alert if nothing is selected.
 	 */
 	function checkAnswerResult() {
+		const questionArray = questions[runningQuestion]
 		if (!$("input:checked").val()) {
 			alert('Oops! Please pick an option and try again!');
 		} else if ($("input:checked").val() == questionArray.answer) {
 			score += 1;
-			runningQuestion += 1;
 		}
 	}
 
@@ -187,7 +189,8 @@ $(function () {
 	 * Resets all scores, hides results-page and quiz-page, and returns to the main screen
 	 */
 	function startAgainFromMenu() {
-		score = 0
+		score = 0;
+		runningQuestion = 0;
 
 		$("#quiz-page").addClass("hidden");
 		$("#home-page").removeClass("hidden");
