@@ -201,9 +201,4 @@ $(function () {
 	$("#start-again-btn").click(function () {
 		startAgainFromMenu()
 	});
-	// Event listener to initiate instructions page and hide other content if button is clicked on the homepage
-	$("#instructions-btn").click(function () {
-		$("#home-page").classList.add("hidden");
-		$("#content-container").style.position = "relative";
-	});
 });
