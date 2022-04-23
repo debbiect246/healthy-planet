@@ -112,10 +112,9 @@ $(function () {
 		}
 	]
 
-	const lastQuestion = questions.length;
+	const lastQuestion = 2;
 	let runningQuestion = 0;
 	let score = 0;
-	console.log(`Running Question: ${runningQuestion}, Score: ${score}`);
 	$("#start-quiz-btn").click(function () {
 		showNextQuestion();
 	});
@@ -129,7 +128,6 @@ $(function () {
 	 * Display the "quiz-page" html, show each question in order if there are ny left otherwise call the collectResultsAndDisplayHouse.
 	 */
 	function showNextQuestion() {
-		console.log(`Running Question: ${runningQuestion}, Score: ${score}`);
 		if (runningQuestion < lastQuestion) {
 			const questionArray = questions[runningQuestion]
 			$("#home-page").addClass("hidden");
@@ -158,7 +156,7 @@ $(function () {
 			</label>
 		`);
 		} else {
-			showResult();
+			displayResults();
 		}
 	}
 
@@ -167,7 +165,6 @@ $(function () {
 	 */
 	function submitAnswer() {
 		checkAnswerResult();
-		console.log(runningQuestion);
 		runningQuestion += 1;
 		showNextQuestion();
 	}
@@ -185,9 +182,24 @@ $(function () {
 	}
 
 
+	/**
+	 * Displays the final score to the user
+	 */
 	function displayResults() {
-		
+
+		$("#quiz-page").addClass("hidden");
+		$("#home-page").addClass("hidden");
+		$("#results-page").removeClass("hidden");
+		$('#results-page').html(`
+			<h2>Congratulations on finishing the Quiz!</h2>
+            <p id="final-score">You scored ${score} out of ${lastQuestion}</p>
+			<button id="return-to-menu-btn" class="btn btn-primary btn-block">Start Again</button>`)
+		$("#return-to-menu-btn").click(function () {
+			startAgainFromMenu()
+		});
 	}
+
+
 	/**
 	 * Resets all scores, hides results-page and quiz-page, and returns to the main screen
 	 */
@@ -199,6 +211,7 @@ $(function () {
 		$("#home-page").removeClass("hidden");
 		$("#results-page").addClass("hidden");
 	}
+
 
 	// Event listener to restart the quiz if "start again" button is clicked
 	$("#start-again-btn").click(function () {
