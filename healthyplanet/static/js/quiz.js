@@ -1,23 +1,12 @@
 $(function () {
 	console.log("DOM fully loaded and parsed");
 
-	// Get the Questions object from questions.json
-	// questions = $.ajax({
-	// 	url: "../static/js/questions.json",
-	// 	dataType: "json",
-	// 	type: "GET",
-	// 	cache: false,
-	// 	success: function (data) {
-	// 		console.log("JSON Loaded");
-	// 	}
-	// });
-
 	questions = [{
 			"title": "Question 1",
 			"optionA": "A",
 			"optionB": "B",
 			"optionC": "C",
-			"optionD": "C",
+			"optionD": "D",
 			"answer": "B"
 		},
 		{
@@ -123,18 +112,19 @@ $(function () {
 		}
 	]
 
-	const currentQuestion = $("#current-question");
-	const answerOptions = $("#answer-options");
 	const lastQuestion = questions.length;
 	let runningQuestion = 0
+	const questionArray = questions[runningQuestion];
+	score = 0;
 
 	$("#start-quiz-btn").click(function () {
 		showNextQuestion();
 	});
 
-	$('btn-submit').click(function () {
-		preventDefault();
+	$('#btn-submit').click(function (e) {
+		e.preventDefault();
 		submitAnswer();
+		
 	});
 
 	/**
@@ -142,7 +132,6 @@ $(function () {
 	 */
 	function showNextQuestion() {
 		if (runningQuestion < lastQuestion) {
-			const questionArray = questions[runningQuestion];
 			$("#home-page").addClass("hidden");
 			$("#quiz-page").removeClass("hidden");
 			$("#start-again-btn-div").removeClass("hidden");
@@ -151,19 +140,19 @@ $(function () {
 			// Inject template HTML into fieldset element
 			$('#current-question').html(questionArray.title);
 			$('#answer-options').html(`
-			<input class="answer-option" type="radio" name="answers" id="option-1" required>
+			<input class="answer-option" type="radio" name="answers" id="option-1" value="${questionArray.optionA}"required>
 			<label class="answer-option" for="option-1">
 			<span data-hover="${questionArray.optionA}">${questionArray.optionA}</span>
 			</label>
-			<input class="answer-option" type="radio" name="answers" id="option-2">
+			<input class="answer-option" type="radio" name="answers" id="option-2" value="${questionArray.optionB}">
 			<label class="answer-option" for="option-2">							
 			<span data-hover="${questionArray.optionB}">${questionArray.optionB}</span>
 			</label>
-			<input class="answer-option" type="radio" name="answers" id="option-3">
+			<input class="answer-option" type="radio" name="answers" id="option-3" value="${questionArray.optionC}">
 			<label class="answer-option" for="option-3">
 			<span data-hover="${questionArray.optionC}">${questionArray.optionC}</span>
 			</label>
-			<input class="answer-option" type="radio" name="answers" id="option-4">
+			<input class="answer-option" type="radio" name="answers" id="option-4" value="${questionArray.optionD}">
 			<label class="answer-option" for="option-4">
 			<span data-hover="${questionArray.optionD}">${questionArray.optionD}</span>
 			</label>
@@ -173,20 +162,24 @@ $(function () {
 		}
 	}
 
-	// /**
-	//  * When the submit button is clicked call the relavent functions to progress the quiz
-	//  */
-	// function submitAnswer() {
-	// 	checkAnswerResult();
-	// 	showNextQuestion();
-	// }
+	/**
+	 * When the submit button is clicked call the relavent functions to progress the quiz
+	 */
+	function submitAnswer() {
+		checkAnswerResult();
+		showNextQuestion();
+	}
 
-	// /**
-	//  * Check which answer-option has been checked, and record the result. Otherwise display an alert if nothing is selected.
-	//  */
-	// function checkAnswerResult() {
-
-	// }
+	/**
+	 * Check which answer-option has been checked, and record the result. Otherwise display an alert if nothing is selected.
+	 */
+	function checkAnswerResult() {
+		console.log(questionArray.answer)
+		if ($('input:checked').val() == questionArray.answer) {
+			score += 1;
+		}
+		console.log(score);
+	}
 
 	/**
 	 * Resets all scores, hides results-page and quiz-page, and returns to the main screen
@@ -208,5 +201,4 @@ $(function () {
 		$("#home-page").classList.add("hidden");
 		$("#content-container").style.position = "relative";
 	});
-
 });
