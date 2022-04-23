@@ -1,23 +1,12 @@
 $(function () {
 	console.log("DOM fully loaded and parsed");
 
-	// Get the Questions object from questions.json
-	// questions = $.ajax({
-	// 	url: "../static/js/questions.json",
-	// 	dataType: "json",
-	// 	type: "GET",
-	// 	cache: false,
-	// 	success: function (data) {
-	// 		console.log("JSON Loaded");
-	// 	}
-	// });
-
 	questions = [{
 			"title": "Question 1",
 			"optionA": "A",
 			"optionB": "B",
 			"optionC": "C",
-			"optionD": "C",
+			"optionD": "D",
 			"answer": "B"
 		},
 		{
@@ -123,17 +112,16 @@ $(function () {
 		}
 	]
 
-	const currentQuestion = $("#current-question");
-	const answerOptions = $("#answer-options");
 	const lastQuestion = questions.length;
-	let runningQuestion = 0
-
+	let runningQuestion = 0;
+	score = 0;
+	console.log(`Running Question: ${runningQuestion}, Score: ${score}`);
 	$("#start-quiz-btn").click(function () {
 		showNextQuestion();
 	});
 
-	$('btn-submit').click(function () {
-		preventDefault();
+	$('#btn-submit').click(function (e) {
+		e.preventDefault();
 		submitAnswer();
 	});
 
@@ -141,29 +129,30 @@ $(function () {
 	 * Display the "quiz-page" html, show each question in order if there are ny left otherwise call the collectResultsAndDisplayHouse.
 	 */
 	function showNextQuestion() {
+		console.log(`Running Question: ${runningQuestion}, Score: ${score}`);
 		if (runningQuestion < lastQuestion) {
-			const questionArray = questions[runningQuestion];
+			const questionArray = questions[runningQuestion]
 			$("#home-page").addClass("hidden");
 			$("#quiz-page").removeClass("hidden");
 			$("#start-again-btn-div").removeClass("hidden");
 			$("#btn-submit").removeClass("hidden");
-			
+
 			// Inject template HTML into fieldset element
 			$('#current-question').html(questionArray.title);
 			$('#answer-options').html(`
-			<input class="answer-option" type="radio" name="answers" id="option-1" required>
+			<input class="answer-option" type="radio" name="answers" id="option-1" value="${questionArray.optionA}"required>
 			<label class="answer-option" for="option-1">
 			<span data-hover="${questionArray.optionA}">${questionArray.optionA}</span>
 			</label>
-			<input class="answer-option" type="radio" name="answers" id="option-2">
+			<input class="answer-option" type="radio" name="answers" id="option-2" value="${questionArray.optionB}">
 			<label class="answer-option" for="option-2">							
 			<span data-hover="${questionArray.optionB}">${questionArray.optionB}</span>
 			</label>
-			<input class="answer-option" type="radio" name="answers" id="option-3">
+			<input class="answer-option" type="radio" name="answers" id="option-3" value="${questionArray.optionC}">
 			<label class="answer-option" for="option-3">
 			<span data-hover="${questionArray.optionC}">${questionArray.optionC}</span>
 			</label>
-			<input class="answer-option" type="radio" name="answers" id="option-4">
+			<input class="answer-option" type="radio" name="answers" id="option-4" value="${questionArray.optionD}">
 			<label class="answer-option" for="option-4">
 			<span data-hover="${questionArray.optionD}">${questionArray.optionD}</span>
 			</label>
@@ -173,26 +162,34 @@ $(function () {
 		}
 	}
 
-	// /**
-	//  * When the submit button is clicked call the relavent functions to progress the quiz
-	//  */
-	// function submitAnswer() {
-	// 	checkAnswerResult();
-	// 	showNextQuestion();
-	// }
+	/**
+	 * When the submit button is clicked call the relavent functions to progress the quiz
+	 */
+	function submitAnswer() {
+		checkAnswerResult();
+		console.log(runningQuestion);
+		runningQuestion += 1;
+		showNextQuestion();
+	}
 
-	// /**
-	//  * Check which answer-option has been checked, and record the result. Otherwise display an alert if nothing is selected.
-	//  */
-	// function checkAnswerResult() {
-
-	// }
+	/**
+	 * Check which answer-option has been checked, and record the result. Otherwise display an alert if nothing is selected.
+	 */
+	function checkAnswerResult() {
+		const questionArray = questions[runningQuestion]
+		if (!$("input:checked").val()) {
+			alert('Oops! Please pick an option and try again!');
+		} else if ($("input:checked").val() == questionArray.answer) {
+			score += 1;
+		}
+	}
 
 	/**
 	 * Resets all scores, hides results-page and quiz-page, and returns to the main screen
 	 */
 	function startAgainFromMenu() {
-		score = 0
+		score = 0;
+		runningQuestion = 0;
 
 		$("#quiz-page").addClass("hidden");
 		$("#home-page").removeClass("hidden");
@@ -203,10 +200,4 @@ $(function () {
 	$("#start-again-btn").click(function () {
 		startAgainFromMenu()
 	});
-	// Event listener to initiate instructions page and hide other content if button is clicked on the homepage
-	$("#instructions-btn").click(function () {
-		$("#home-page").classList.add("hidden");
-		$("#content-container").style.position = "relative";
-	});
-
 });
