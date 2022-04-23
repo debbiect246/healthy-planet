@@ -160,7 +160,7 @@ footer {
   position: relative;
   display: inline-block;
   padding: 5px 2px;
-  width: 100%;
+  width: 70%;
   height: 35px;
   font-size: 16px;
   border: 3px solid #18b7be;
@@ -186,7 +186,7 @@ footer {
   content: "";
   top: 0;
   left: 0;
-  width: 100%;
+  width: 70%;
   height: 100%;
   border: none;
   background-color: #18b7be;
@@ -207,7 +207,7 @@ footer {
   content: attr(data-hover);
   top: 0;
   left: 0;
-  width: 100%;
+  width: 70%;
   overflow: hidden;
   color: #f9f7f0;
   -moz-transition: max-height 0.3s;
