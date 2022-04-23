@@ -7,7 +7,7 @@
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
-  background-color: #F9F7F0;
+  background-color: #f9f7f0;
 }
 
 h1 {
@@ -16,7 +16,7 @@ h1 {
 
 .hero-img {
   width: 100%;
-  height: 20rem;
+  max-height: 20rem;
   overflow: hidden;
 }
 
@@ -24,6 +24,24 @@ h1 {
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.hero-title {
+  color: #fff;
+  text-shadow: 0px 0px 5px #000;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
 .bg-main {
@@ -43,6 +61,38 @@ footer {
   color: #178ca4;
 }
 
+/* INDEX PAGE STYLES */
+.bg-index {
+  background: url("/static/images/hero-img-full.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+#slogan {
+  position: absolute;
+  top: 390px;
+  right: 40px;
+  font-size: 3.2rem;
+  animation: fadeIn 5s alternate;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 90;
+  }
+}
+
+@media (min-width: 768px) {
+  #slogan {
+    position: absolute;
+    top: 490px;
+    right: 40px;
+    font-size: 2.6rem;
+    animation: fadeIn 5s alternate;
+  }
+}
 
 /* PLASTIC FACTS PAGE STYLES */
 
@@ -56,16 +106,16 @@ footer {
 }
 
 .pie-chart {
-max-width:400px;
+  max-width: 400px;
 }
 
 .fact-img {
-border-radius: 50%;
-max-width:400px
+  border-radius: 50%;
+  max-width: 400px;
 }
 
 .small-svg {
-max-width: 350px;
+  max-width: 350px;
 }
 
 /*  QUIZ PAGE STYLES */
@@ -86,7 +136,6 @@ max-width: 350px;
   border-color: #072a40;
 }
 
-
 .quiz-box {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -106,8 +155,8 @@ max-width: 350px;
   visibility: hidden;
 }
 
-.answer-option:checked+label,
-.answer-option:not(:checked)+label {
+.answer-option:checked + label,
+.answer-option:not(:checked) + label {
   position: relative;
   display: inline-block;
   padding: 5px 2px;
@@ -121,23 +170,23 @@ max-width: 350px;
   transition: all 300ms linear;
 }
 
-.answer-option:not(:checked)+label {
-  background-color: #F9F7F0;
+.answer-option:not(:checked) + label {
+  background-color: #f9f7f0;
 }
 
-.answer-option:not(:checked):hover+label:hover {
+.answer-option:not(:checked):hover + label:hover {
   color: black;
   background-color: #18b7be;
 }
 
-.answer-option:checked+label::before,
-.answer-option:not(:checked)+label::before,
+.answer-option:checked + label::before,
+.answer-option:not(:checked) + label::before,
 .quiz-btn::before {
   position: absolute;
-  content: '';
+  content: "";
   top: 0;
   left: 0;
-  width: 70%;
+  width: 100%;
   height: 100%;
   border: none;
   background-color: #18b7be;
@@ -145,33 +194,57 @@ max-width: 350px;
   transition: all 300ms linear;
 }
 
-.answer-option:checked+label span,
-.answer-option:not(:checked)+label span {
+.answer-option:checked + label span,
+.answer-option:not(:checked) + label span {
   position: relative;
   display: block;
 }
 
-.answer-option:checked+label span::before,
-.answer-option:not(:checked)+label span::before,
+.answer-option:checked + label span::before,
+.answer-option:not(:checked) + label span::before,
 .quiz-btn::before {
   position: absolute;
   content: attr(data-hover);
   top: 0;
   left: 0;
-  width: 70%;
+  width: 100%;
   overflow: hidden;
-  color: #F9F7F0;
+  color: #f9f7f0;
   -moz-transition: max-height 0.3s;
   transition: max-height 0.3s;
-
 }
 
-.answer-option:not(:checked)+label span::before,
+.answer-option:not(:checked) + label span::before,
 .quiz-btn::before {
   max-height: 0;
 }
 
-.answer-option:checked+label span::before,
+.answer-option:checked + label span::before,
 .quiz-btn::before {
   max-height: 100%;
+}
+
+/*        Media Queries                   */
+@media (min-width: 576px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 6rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-title {
+    font-size: 8rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-title {
+    font-size: 10rem;
+  }
 }
