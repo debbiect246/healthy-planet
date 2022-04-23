@@ -199,26 +199,25 @@ $(function () {
 
 	// }
 
-	// /**
-	//  * Resets all scores, hides results-page and quiz-page, and returns to the main screen
-	//  */
-	// function startAgainFromMenu() {
-	// 	score = 0
+	/**
+	 * Resets all scores, hides results-page and quiz-page, and returns to the main screen
+	 */
+	function startAgainFromMenu() {
+		score = 0
 
-	// 	$("#quiz-page").classList.add("hidden");
-	// 	$("#home-page").classList.remove("hidden");
-	// 	$("#results-page").classList.add("hidden");
-	// 	$("#content-container").style.position = "absolute";
-	// }
+		$("#quiz-page").addClass("hidden");
+		$("#home-page").removeClass("hidden");
+		$("#results-page").addClass("hidden");
+	}
 
-	// // Event listener to restart the quiz if "start again" button is clicked
-	// $("#start-again-btn").click(function() {
-	// 	startAgainFromMenu
-	// });
-	// // Event listener to initiate instructions page and hide other content if button is clicked on the homepage
-	// $("#instructions-btn").click(function() {
-	// 	$("#home-page").classList.add("hidden");
-	// 	$("#content-container").style.position = "relative";
-	// });
+	// Event listener to restart the quiz if "start again" button is clicked
+	$("#start-again-btn").click(function() {
+		startAgainFromMenu()
+	});
+	// Event listener to initiate instructions page and hide other content if button is clicked on the homepage
+	$("#instructions-btn").click(function() {
+		$("#home-page").classList.add("hidden");
+		$("#content-container").style.position = "relative";
+	});
 
 });
