@@ -62,13 +62,21 @@ footer {
 /*  QUIZ PAGE STYLES */
 
 .hidden {
-  display: none !important;
+  display: none;
 }
 
-input, button {
+.btn {
   margin-top: 20px;
-  border-radius: 50%
+  border-radius: 100px;
+  background-color: #18b7be;
+  border-color: #18b7be;
 }
+
+.btn:hover {
+  background-color: #072a40;
+  border-color: #072a40;
+}
+
 
 .quiz-box {
   margin-top: 20px;

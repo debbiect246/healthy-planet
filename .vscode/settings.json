@@ -28,6 +28,9 @@
       "editor.defaultFormatter": "ms-python.python"
    },
    "[javascript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "HookyQR.beautify"
+   },
+   "[django-html]": {
+      "editor.defaultFormatter": "HookyQR.beautify"
    }
 }

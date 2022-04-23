@@ -1,25 +1,39 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="container">
-        <div class="row text-center justify-content-center align-items-center">
-            <div class="quiz-box">
+<!-- Main Page -->
+<div class="container">
+    <div class="row text-center justify-content-center align-items-center">
+        <div class="quiz-box">
+            <!-- Home Content-->
+            <section id="home-page">
                 <h1>Plastic Quiz</h1>
-                <h2>Test your recycling knowledge with this interactive quiz!</h2>
-                <h3 class="question">Question</h3>
+                <h2>Test your recycling knowledge with this multiple choice quiz!</h2>
 
-                <button id="start-quiz-btn" class="quiz-btn">Start Quiz</button>
-                <button id="instructions-btn" class="quiz-btn">Instructions</button>
-                <input type="text-field" type="text" class="form-control">
-                <button type="submit" class="btn btn-primary btn-block">Submit</button>
-            </div>
+                <button id="start-quiz-btn" class="btn btn-lg btn-primary btn-block">Start Quiz</button>
+            </section>
+
+            <!--- Quiz Content -->
+            <section id="quiz-page" class="hidden">
+                <h2 id="current-question">Question Title</h2>
+                <form id="quiz-answer-options">
+                    <fieldset id="answer-options">
+                        <!-- Empty list to be populated by question options in Javascript -->
+                    </fieldset>
+                </form>
+                <button type="submit" form='quiz-answer-options' id="btn-submit"
+                    class="btn btn-primary btn-block">Submit</button>
+                <div id="start-again-btn-div">
+                    <button id="start-again-btn" class="btn btn-primary btn-block">Start Again</button>
+                </div>
+            </section>
         </div>
-    </div>    
+    </div>
+</div>
 
 
-    
 {% endblock%}
 
 {% block scripts %}
-    <script src="{{url_for('static', filename='js/quiz.js')}}"></script>
+<script src="{{url_for('static', filename='js/quiz.js')}}"></script>
 {% endblock %}
