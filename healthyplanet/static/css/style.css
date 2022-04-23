@@ -7,6 +7,7 @@
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
+  background-color: #F9F7F0;
 }
 
 .hero-img {
@@ -36,4 +37,20 @@ footer {
 
 .color-icon {
   color: #178ca4;
+}
+
+
+/* PLASTIC FACTS PAGE STYLES */
+
+.fact-number {
+    font-size: 30rem;
+    color: #bababa;
+}
+
+.fact-svg {
+    max-width: 600px;
+}
+
+.pie-chart {
+  max-width:400px;
 }
