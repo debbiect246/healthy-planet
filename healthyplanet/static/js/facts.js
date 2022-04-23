@@ -1,5 +1,6 @@
 const productionCtx = document.getElementById('plastic-production').getContext('2d');
 const decompositionCtx = document.getElementById('plastic-decomposition').getContext('2d');
+const wasteCtx = document.getElementById('plastic-waste').getContext('2d');
 const productionChart = new Chart(productionCtx, {
     type: 'bar',
     data: {
@@ -63,6 +64,37 @@ const decompositionChart = new Chart(decompositionCtx, {
         plugins: {
             legend: {
                 position: "bottom"
+            }
+        }
+    }
+});
+
+const wasteChart = new Chart(wasteCtx, {
+    type: 'bar',
+    data: {
+        labels: ["Packaging", "Textiles", "Other", "Consumer Products", "Transportation", "Construction", "Electricals", "Industrial Machinery"],
+        datasets: [{
+            label: "Millions of tonnes of waste",
+            data: [141, 42, 38, 37, 17, 13, 13, 1],
+            backgroundColor: [
+                '#18B7BE',
+                '#FF595E',
+                '#FF9B42',
+                '#717EC3',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+        },
+        plugins: {
+            legend: {
+                display: false,
+            },
+            title: {
+                display: true,
+                text: ["Annual plastic waste by sector in millions of tonnes"]
             }
         }
     }

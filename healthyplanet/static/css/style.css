@@ -47,16 +47,25 @@ footer {
 /* PLASTIC FACTS PAGE STYLES */
 
 .fact-number {
-    font-size: 30rem;
-    color: #bababa;
+  font-size: 30rem;
+  color: #bababa;
 }
 
 .fact-svg {
-    max-width: 600px;
+  max-width: 600px;
 }
 
 .pie-chart {
-  max-width:400px;
+max-width:400px;
+}
+
+.fact-img {
+border-radius: 50%;
+max-width:400px
+}
+
+.small-svg {
+max-width: 350px;
 }
 
 /*  QUIZ PAGE STYLES */
