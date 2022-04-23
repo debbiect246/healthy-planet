@@ -1,7 +1,4 @@
-// $.getJSON("../static/js/questions.json", function (data) {
-//   console.log("It worked");
-// });
-
+// Get the Questions object from questions.json
 $.ajax({
     url: "../static/js/questions.json",
     dataType: "json",
@@ -9,5 +6,8 @@ $.ajax({
     cache: false,
     success: function (data) {
         console.log(data);
+        $(data.Questions).each(function (index, value) {
+            console.log(value.title);
+        })
     }
 })

@@ -54,3 +54,9 @@ footer {
 .pie-chart {
   max-width:400px;
 }
+
+/*  QUIZ PAGE STYLES */
+
+.hidden {
+  display: none !important;
+}
