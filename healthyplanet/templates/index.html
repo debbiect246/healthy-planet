@@ -1,30 +1,40 @@
 {% extends "base.html" %}
 {% set active_page = "home" %}
 {% block content %}
-<section class="container-fluid min-vh-100 bg-index">
-    <h1 class="text-end text-light fw-bold" id="slogan">
-        Plastics still polluting our planet slowly.
+<section class="container-fluid min-vh-100 bg-s1">
+    <h1 class="text-start text-sm-end text-light fw-bold" id="slogan">
+        Plastics still polluting our planet
     </h1>
 </section>
-<section class="container-fluid min-vh-100">
-    <p>
-        Plastics also affect ecosystems that we rely on to provide food.
-        We all need to find a solution to reduce our reliance on plastics in our daily life.
-        If we can't avoid using plastic, we have to find a way to recycle it or dispose of it well so that it doesn't
-        harm
-        the planet.
-    </p>
+<section class="container-fluid min-vh-100 px-0 bg-s2">
+    <div class="min-vh-100 d-flex justify-content-center align-items-center">
+        <ul class="fs-5 section-content text-light">
+            <li>Plastics affect ecosystems that we rely on to provide food.</li>
+            <li>We all need to find a solution to reduce our reliance on plastics in our daily life.</li>
+            <li>If we can't avoid using plastic, we have to find a way to recycle it or dispose of it well.</li>
+        </ul>
+    </div>
 </section>
-<section class="container-fluid min-vh-100">
-    <p>
-        Take a look around for some ideas on how archive our goal,
-        and maybe think about pledging to reduce your use of plastic.
-        You can take a quiz on your use of plastic after looking at some facts about the use of plastic on the planet.
-        This application was inspired by Earth day 2022 to help others.
-        The application was created by six coders during the Code Institute April hackathon. They are concerned about
-        the
-        use
-        and misuse of plastic on our planet.
-    </p>
+<section class="container-fluid min-vh-100 px-0 bg-s3">
+    <div class="min-vh-100 d-flex justify-content-center align-items-center">
+        <p class="fs-5 section-content text-light">
+            Take a look around for some ideas on how archive our goal.<br>
+            Maybe you can think about pledging to reduce your use of plastic.<br>
+            Try to take a quiz on your use of plastic after looking at some facts about the use of plastic on the
+            planet.
+        </p>
+    </div>
+</section>
+<section class="container-fluid min-vh-100 px-0">
+    <div class="min-vh-100 d-flex flex-column justify-content-center align-items-center">
+        <img id="s3-img" src="{{url_for('static', filename='images/planet-earth-in-our-hands.webp')}}"
+            alt="planet and earth are in our hand" />
+        <p class="fs-6">
+            The application was inspired by Earth day 2022 to help others.<br>
+        </p>
+        <p class="fs-6">
+            And it created by five coders during the Code Institute April hackathon.
+        </p>
+    </div>
 </section>
 {% endblock%}
