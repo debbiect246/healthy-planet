@@ -16,7 +16,7 @@
 - [User Experience](#user-experience)
     - [User Stories](#user-stories)
     - [UXD User Experience Design](#uxd-user-experience-design)
-- [Wireframes](#wireframes)
+    - [Wireframes](#wireframes)
 - [Features](#features)
     - [Current Features](#current-features)
     - [Features Left to Implement](#features-left-to-implement)
@@ -70,7 +70,7 @@ Healthy Planet is a small project aimed to educate and entertain users wiith fac
     -   #### Typography
         [Roboto](https://fonts.google.com/specimen/Roboto) was used throughout the site for its clear style, and well established use.
 
-## Wireframes
+-   ### Wireframes
     - 
 
 ## Features
