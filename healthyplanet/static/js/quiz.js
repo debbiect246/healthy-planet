@@ -1,7 +1,5 @@
 $(function () {
-	console.log("DOM fully loaded and parsed");
-
-	questions = [{
+	const questions = [{
 			"type": "tf",
 			"title": "Plastic doesn't need to be rinsed and emptied before it's recycled.",
 			"optionA": "True",
@@ -106,7 +104,6 @@ $(function () {
 	let runningQuestion = 0;
 	let score = 0;
 	$("#start-quiz-btn").click(function () {
-		console.log("clicked")
 		displayQuestion();
 	});
 
@@ -125,9 +122,9 @@ $(function () {
 			$("#quiz-page").removeClass("hidden");
 			$("#start-again-btn-div").removeClass("hidden");
 			$("#btn-submit").removeClass("hidden");
-			console.log(questionArray.type)
 			// Inject template HTML into fieldset element
 			$('#current-question').html(questionArray.title);
+			$('#question-counter').html(`Question${runningQuestion + 1} of ${lastQuestion}`);
 			if (questionArray.type === "multi") {
 				$('#answer-options').html(`
 				<input class="answer-option" type="radio" name="answers" id="option-1" value="${questionArray.optionA}"required>
@@ -166,25 +163,48 @@ $(function () {
 	 * When the submit button is clicked call the relavent functions to progress the quiz
 	 */
 	function submitAnswer() {
-		if (runningQuestion < lastQuestion) {
-			checkAnswerResult();
-			runningQuestion += 1;
-			displayQuestion();
-
+		// get a boolean to confirm the answer is checked or not
+		let checked = false;
+		checked = checkAnswerResult();
+		// if current question counter lesser than maxium index number(12), display next question
+		// else display result
+		if (runningQuestion < lastQuestion - 1) {
+			// check the answer, if answer is valid display next question
+			// else display the current question again
+			if (checked) {
+				runningQuestion += 1;
+				displayQuestion();
+			} else {
+				displayQuestion();
+			}
 		} else {
-			displayResults();
+			// check the answer, if answer is valid display the result
+			// else display the current question again
+			if(checked){
+				displayResults();
+			} else {
+				displayQuestion();
+			}
 		}
 	}
 		/**
-		 * Check which answer-option has been checked, and record the result. Otherwise display an alert if nothing is selected.
+		 * Get the checked value from the form. Display an alert and return false if nothing is selected.
+		 * If answer is correct count the score and return true because user select the correct answer.
+		 * If answer is incorrect return true because have select an answer but the answer is incorrect.
 		 */
 		function checkAnswerResult() {
 			const questionArray = questions[runningQuestion]
 			if (!$("input:checked").val()) {
+				// if answer is empty return false
 				alert('Oops! Please pick an option and try again!');
+				return false;
 			} else if ($("input:checked").val() == questionArray.answer) {
+				// if answer is correct add a score and return true
 				score += 1;
+				return true;
 			}
+			// if answer is checked but not correct return true
+			return true;
 		}
 
 
@@ -192,7 +212,6 @@ $(function () {
 		 * Displays the final score to the user
 		 */
 		function displayResults() {
-
 			$("#quiz-page").addClass("hidden");
 			$("#home-page").addClass("hidden");
 			$("#results-page").removeClass("hidden");
