@@ -124,7 +124,7 @@ $(function () {
 			$("#btn-submit").removeClass("hidden");
 			// Inject template HTML into fieldset element
 			$('#current-question').html(questionArray.title);
-			$('#question-counter').html(`Question${runningQuestion + 1} of ${lastQuestion}`);
+			$('#question-counter').html(`Question ${runningQuestion + 1} of ${lastQuestion}`);
 			if (questionArray.type === "multi") {
 				$('#answer-options').html(`
 				<input class="answer-option" type="radio" name="answers" id="option-1" value="${questionArray.optionA}"required>
@@ -166,7 +166,7 @@ $(function () {
 		// get a boolean to confirm the answer is checked or not
 		let checked = false;
 		checked = checkAnswerResult();
-		// if current question counter lesser than maxium index number(12), display next question
+		// if current question counter is less than maxium index number(12), display next question
 		// else display result
 		if (runningQuestion < lastQuestion - 1) {
 			// check the answer, if answer is valid display next question
