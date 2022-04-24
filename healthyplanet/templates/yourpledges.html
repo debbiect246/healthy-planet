@@ -6,7 +6,7 @@
         
     {% if pledgesresult %}
       <h3> Your pledges are :</h3> 
-        {%for each in pledgesresult%}
+        {% for each in pledgesresult %}
         <p>{{each}}</p>
         {%endfor%}
     {% endif %}

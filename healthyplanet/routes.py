@@ -23,27 +23,20 @@ def quiz():
     return render_template("quiz.html")
 
 
-@app.route("/pledges", methods =["GET","POST"])
+@app.route("/pledges", methods=["GET","POST"])
 def pledges():
     """pledges logic"""
     pledgesresult=[]
     if request.method == "POST":
-        #print(request.form.getlist('pledges'))
-        pledgesresult = request.form.getlist('GET','pledges')
-        #print(pledgesresult)
-    #open file object and write to pledgesmade
-    #file.
-        with open('data/pledgesmade.txt','w') as file:
-            file.write(str(pledgesresult))
-            #print(pledgesresult)
-        return redirect(url_for ('yourpledges', pledgesresult=pledgesresult))
-
+        pledgesresult = request.form.getlist('pledges')
+        return redirect(url_for('yourpledges', pledgesresult=','.join(pledgesresult)))
     return render_template('pledges.html', pledgesresult=pledgesresult)
 
 #displays pledges made to user
 @app.route('/yourpledges/',methods=["GET", "POST"])
 def yourpledges():
-  return render_template('yourpledges.html')
+    data = request.args.get('pledgesresult').split(',')
+    return render_template('yourpledges.html', pledgesresult=data)
 
 @app.route("/environmental-stories")
 def environmental_stories():
