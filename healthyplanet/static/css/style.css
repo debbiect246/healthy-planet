@@ -245,6 +245,13 @@ footer {
   max-height: 100%;
 }
 
+/* STORIES PAGE STYLES */
+
+.video {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
 /*        Media Queries                   */
 @media (min-width: 576px) {
   .hero-title {
