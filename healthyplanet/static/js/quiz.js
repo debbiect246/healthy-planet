@@ -195,15 +195,26 @@ $(function () {
 		function checkAnswerResult() {
 			const questionArray = questions[runningQuestion]
 			if (!$("input:checked").val()) {
-				// if answer is empty return false
-				alert('Oops! Please pick an option and try again!');
+				// if answer is empty, show modal and return false
+				// change modal text
+				$('#modalText').text("Oops! Please pick an option and try again!")
+				// show modal
+				$('#quizModal').modal('show');
 				return false;
 			} else if ($("input:checked").val() == questionArray.answer) {
-				// if answer is correct add a score and return true
+				// if answer is correct, show modal add a score and return true
+				// change modal text
+				$('#modalText').text("Well done! That's the right answer!")
+				// show modal
+				$('#quizModal').modal('show');
 				score += 1;
 				return true;
 			}
-			// if answer is checked but not correct return true
+			// if answer is checked but not correct,show modal and return true
+			// change modal text
+			$('#modalText').html("Sorry, that's the wrong answer.<br>The right answer was: " + questionArray.answer)
+			// show modal
+			$('#quizModal').modal('show');
 			return true;
 		}
 
