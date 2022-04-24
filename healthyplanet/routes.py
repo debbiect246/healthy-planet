@@ -36,7 +36,6 @@ def pledges():
 @app.route('/yourpledges/',methods=["GET", "POST"])
 def yourpledges():
     data = request.args.get('pledgesresult').split(',')
-    print(data)
     return render_template('yourpledges.html', pledgesresult=data)
 
 @app.route("/environmental-stories")
