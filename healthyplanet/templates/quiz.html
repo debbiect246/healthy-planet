@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-
+{% set active_page = "quiz" %}
+{% set hero_title = "Quiz" %}
 {% block content %}
 <!-- Main Page -->
 <div class="container">
@@ -21,11 +22,16 @@
                         <!-- Empty list to be populated by question options in Javascript -->
                     </fieldset>
                 </form>
+                <p id="question-counter" class="my-3"></p>
                 <button type="submit" form='quiz-answer-options' id="btn-submit"
                     class="btn btn-primary btn-block">Submit</button>
                 <div id="start-again-btn-div">
                     <button id="start-again-btn" class="btn btn-primary btn-block">Start Again</button>
                 </div>
+            </section>
+
+            <section id="results-page" class="hidden">
+                <!-- Empty section to be populated by displayResults() -->
             </section>
         </div>
     </div>

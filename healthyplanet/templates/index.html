@@ -1,4 +1,40 @@
 {% extends "base.html" %}
+{% set active_page = "home" %}
 {% block content %}
-<!--Content goes here-->
+<section class="container-fluid min-vh-100 bg-s1">
+    <h1 class="text-start text-sm-end text-light fw-bold" id="slogan">
+        Plastics still polluting our planet
+    </h1>
+</section>
+<section class="container-fluid min-vh-100 px-0 bg-s2">
+    <div class="min-vh-100 d-flex justify-content-center align-items-center">
+        <ul class="fs-5 section-content text-light">
+            <li>Plastics affect ecosystems that we rely on to provide food.</li>
+            <li>We all need to find a solution to reduce our reliance on plastics in our daily life.</li>
+            <li>If we can't avoid using plastic, we have to find a way to recycle it or dispose of it well.</li>
+        </ul>
+    </div>
+</section>
+<section class="container-fluid min-vh-100 px-0 bg-s3">
+    <div class="min-vh-100 d-flex justify-content-center align-items-center">
+        <p class="fs-5 section-content text-light">
+            Take a look around for some ideas on how archive our goal.<br>
+            Maybe you can think about pledging to reduce your use of plastic.<br>
+            Try to take a quiz on your use of plastic after looking at some facts about the use of plastic on the
+            planet.
+        </p>
+    </div>
+</section>
+<section class="container-fluid min-vh-100 px-0">
+    <div class="min-vh-100 d-flex flex-column justify-content-center align-items-center">
+        <img id="s3-img" src="{{url_for('static', filename='images/planet-earth-in-our-hands.webp')}}"
+            alt="planet and earth are in our hand" />
+        <p class="fs-6">
+            The application was inspired by Earth day 2022 to help others.<br>
+        </p>
+        <p class="fs-6">
+            And it created by five coders during the Code Institute April hackathon.
+        </p>
+    </div>
+</section>
 {% endblock%}

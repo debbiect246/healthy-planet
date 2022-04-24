@@ -59,9 +59,12 @@ Healthy Planet is a small project aimed to educate and entertain users wiith fac
 
     -   #### First Time Visitor Goals
 
-        1. As a First Time Visitor, I want to 
-        1. As a First Time Visitor, I want to 
-        1. As a First Time Visitor, I want to 
+        1. As a First Time Visitor, I want to see stories about how plastic is polluting the environment.
+        2. As a First Time Visitor, I want to see inspiring stories about how plastic is being recycled and reused in the world.
+        3. As a First Time Visitor, I want to test my knowledge of plastic recylcing and reuse using a quiz.
+        4. As a First Time Visitor, I want to be able to make pledges about how to reduce and recycle my use of plastic.
+        5. As a First Time Visitor, I want my pledges emailed to me shortly after I make them.
+        
 
     -   #### Returning Visitor Goals
 
@@ -82,23 +85,39 @@ Healthy Planet is a small project aimed to educate and entertain users wiith fac
 
 ### Wireframes
 
+
 ## Features
 
 ### Current Features
 
 ### Features Left to Implement
 
+We thought about how to improve the app.  Some ideas were:
+1.  To have an authentication system so that users pledges could be stored there for retrieval later.
+2.  To have a profile for each user so that they could see the pledges they had made over a set time period.
+3.  Add automated testing maybe using unit testing module in python.
+
 ## Technologies Used
+
+We used the flask framework to build the app as well as balsamiq to design the wireframes.
 
 ### Languages
 
+The languages used were python for logic and the backend, html, css for the front end and javascript for the quiz.
+
 ## Testing
 
+All testing was done manually.
+
 ### Manual Testing
+
+As each person coded part of a page or feature they tested it displayed as correctly or worked as planned.  Others in the group were also able to verify that each feature worked as planned and that the site displayed as planned.
 
 ### Further Testing
 
 ## Deployment
+
+Deployment was done successfully using heroku.  The deployment process is outlined below.  However due to issues with heroky we were unable to use automatic deployment in heroku so Rocky periodically needed to push the code to heroku.
 
 ### Heroku
 
@@ -133,7 +152,20 @@ The site is now live and operational
 
 ## Credits
 
+Credits for images used are shown below.
+1.  Hero image Photo by Naja Bertolt Jensen on Unsplash garbage and fish in sea
+
+
 ### Code
+
+Code was written by different team members and different aspects as shown.
+1.  Rocky got the repo up initially, later the repo was transferred to Debbie.
+2.  Rocky deployed the site to heroku and periodically pushed code to heroku as there were issues at heroku's end with automatic deployment.
+3.  Tom and Ahmed worked on the quiz page using javascript.
+4.  Liam worked on the plastics information page, adding images and styling.
+5.  Debbie worked on the wireframes and pledges page.
+6.  Rocky worked on responsiveness and inserted the emailjs script for the pledges to be emailed to the user.
+7.  Rocky worked on the home page adding text and images.
 
 
 ### Content

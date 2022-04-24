@@ -32,34 +32,46 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-main">
             <div class="container-fluid">
                 <a class="navbar-brand link-light" href="{{ url_for('index') }}">Healthy Planet</a>
-                <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarScroll">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 150px;">
                         <li class="nav-item">
-                            <a class="nav-link active link-light" aria-current="page" href="{{ url_for('index') }}">Home</a>
+                            <a class="nav-link link-light {{ 'active' if active_page == 'home' else '' }}"
+                                aria-current="page" href="{{ url_for('index') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link link-light" href="{{ url_for('plastic_facts') }}">Plastic Facts</a>
+                            <a class="nav-link link-light {{ 'active' if active_page == 'facts' else '' }}"
+                                href="{{ url_for('plastic_facts') }}">Plastic Facts</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link link-light" href="{{ url_for('pledges') }}">Pledges</a>
+                            <a class="nav-link link-light {{ 'active' if active_page == 'pledges' else '' }}"
+                                href="{{ url_for('pledges') }}">Pledges</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link link-light" href="{{ url_for('quiz') }}">Quiz Game</a>
+                            <a class="nav-link link-light {{ 'active' if active_page == 'quiz' else '' }}"
+                                href="{{ url_for('quiz') }}">Quiz</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link link-light" href="{{ url_for('environmental_stories') }}">Environmental Stories</a>
+                            <a class="nav-link link-light {{ 'active' if active_page == 'stories' else '' }}"
+                                href="{{ url_for('environmental_stories') }}">Environmental
+                                Stories</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <div class="hero-img">
+        {% if not active_page == 'home' %}
+        <div class="hero-img position-relative">
             <img src="{{url_for('static', filename='images/hero-img.jpg')}}" alt="Hero images" />
+            <div class="hero-overlay">
+                <h1 class="text-center hero-title">{{ hero_title }}</h1>
+            </div>
         </div>
+        {% endif %}
     </header>
     <main>
         {% block content %}
@@ -68,7 +80,7 @@
     <!-- Footer -->
     <footer class="mt-auto">
         <div class="container-fluid pb-3">
-            <div class="row pt-2">
+            <div class="row pt-3">
                 <div class="col-lg-8 col-md-10 mx-auto">
                     <ul class="list-inline text-center">
                         <li class="list-inline-item">
