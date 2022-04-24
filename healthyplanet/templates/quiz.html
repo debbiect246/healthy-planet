@@ -10,14 +10,12 @@
             <section id="home-page">
                 <h1>Plastic Quiz</h1>
                 <h2>Test your recycling knowledge with this multiple choice quiz!</h2>
-
                 <button id="start-quiz-btn" class="btn btn-lg btn-primary btn-block">Start Quiz</button>
             </section>
-
             <!--- Quiz Content -->
             <section id="quiz-page" class="hidden">
                 <h2 id="current-question"></h2>
-                <form id="quiz-answer-options">
+                <form id="quiz-answer-options" class="text-center">
                     <fieldset id="answer-options">
                         <!-- Empty list to be populated by question options in Javascript -->
                     </fieldset>
@@ -37,6 +35,19 @@
     </div>
 </div>
 
+<!-- Feedback Modal -->
+<div class="modal fade" id="quizModal" tabindex="-1" aria-labelledby="modalText" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalText"></h5>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 {% endblock%}
 
