@@ -96,3 +96,9 @@ max-width: 350px;
   -webkit-box-shadow: -1px 8px 15px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: -1px 8px 15px 0px rgba(0, 0, 0, 0.5);
 }
+
+form {
+  display: inline-block;
+  text-align: left;
+  margin: auto;
+}

@@ -1,4 +1,88 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% block content %}
-<!--Content goes here-->
-{% endblock%}
+
+<body>
+      <center><h5><b>Plastics Pledge</b></h5></center>
+<br>
+
+    <div>
+
+    {% if pledgesresult %}
+      <h5><p>You've chosen some great pledges!</p><p>Your pledges to reduce/recycle your use of plastic are:</p></h5>
+      {%for each in pledgesresult%}
+      <h5><p> * {{each}}</p></h5>
+
+      {%endfor%}
+          
+    {% endif %}
+
+    
+      <!--Select items to pledge for this week.-->
+      <center><p>Select your pledge actions from the following items.</p></center>
+      <center><p>Press Enter Pledges to see your pledges.</h5></p></center>
+
+    </div>
+
+    <br>
+    
+    <div class="container">
+      <form action ="#" method = "POST" >      
+        <fieldset class="checkbox">
+          <legend><b>Make your plastic Pledges for this week!</b></legend>
+   
+         <input type="checkbox" id = "pledge1"  name = "pledges" value ="Avoid single use plastics">
+         <label for="pledge1"><b>Avoid using single use plastics like straws<b></label><br>
+
+          <input type="checkbox" id ="pledge2" name = "pledges" value=" Use a cloth bag"><label for ="pledge2"><b>  Take a cloth bag shopping with you<b></label><br>
+
+          <input type="checkbox" id = "pledge3" name= "pledges" value="recycle chewing gum"><label for = "pledge3"><b>  Recycle chewing gum when I can!<b></label><br>
+
+          <input type="checkbox" id = "pledge4" name ="pledges" value="Unpackaged food"><label for = "pledge4"><b>  Buy more unpackaged food with no plastic wrapping.<b></label><br>
+
+          <input type="checkbox" id = "pledge5" name = "pledges" value="plastic containers"><label for = "pledge5"><b>  Use glass or steel containers instead of plastic containers.<b></label><br>
+
+          <input type="checkbox" id = "pledge6" name ="pledges" value="plastic pegs"><label for= "pledge6"><b>  Use wooden clothes pegs instead of plastic ones.<b></label><br>
+
+          <input type="checkbox" id = "pledge7" name = "pledges" value="awareness"><label for = "pledge7"><b>  Make those around you aware of importance of reducing plastic consumption.<b></label><br>
+
+          <input type="checkbox" id = "pledge8" name = "pledges" value="correct recycling container"><label for = "pledge8"><b>  Put plastic waste in correct recycling container.<b></label><br>
+
+          <input type="checkbox" id="pledge9" name="pledges" value="cosmetics"><label for = "pledge9"><b>  Avoid cosmetics that use micro-plastics.<b></label><br>
+
+          <input type="checkbox" id = "pledge10" name ="pledges" value="biodegradable hair brush"><label for = "pledge10"><b>  Buy a biodegradable hair brush.</b></label><br>
+
+          <input type="checkbox" id = "pledge11" name="pledges" value="email your MP"><label for = "pledge11"><b>  Email you local MP to endorse anti-plastic legislation</b></label><br>
+
+          <input type="checkbox" id = "pledge12" name = "pledges" value="Download and use refill app"><label for = "pledge12"><b>  Download the Refill App to find your nearest refill point and use it</b></label><br>
+
+          <input type="checkbox" id = "pledge13" name = "pledges" value="Shop at nearest supermarket"><label for = "pledge13"><b>  Shop at your nearest zero-waste supermarket</b></label><br>
+
+          <input type="checkbox"  id = "pledge14" name = "pledges" value="Reuse broken or damaged items"><label for = "pledge14"><b>  Reuse broken or damaged items at your nearest repair cafe</b></label><br>
+
+          <input type="checkbox" id = "pledge15" name= "pledges" value=" List unwanted items on freecycle"><label for = "pledge15"><b>  List your unwanted items on Freecycle to find a better home</b></label><br>
+
+          <br>      
+          
+        <!--submit button-->
+          <center><input type="submit" value="Enter Your Pledges" class="btn2"/></center>
+          
+          <br>
+        </fieldset>      
+      </form>
+    </div><!--END FORM-->
+
+<!--PLEDGE RESULTS-->
+    <!--
+    {% if pledgesresult %}
+      <p class="centre"> Your pledges for this week are :</p> 
+        {%for each in pledgesresult%}
+        <p>{{each}}</p>
+        {%endfor%}
+    {% endif %} -->
+<!-- pledges display removed -->
+<!--END PLEDGE RESULTS-->         
+    
+    
+</body>
+
+{% endblock %}
