@@ -27,8 +27,8 @@
 
     <br>
     
-    <div class="container">
-      <form action ="#" method = "POST" >      
+    <div class="container quiz-box">
+      <form action ="{{url_for('pledges')}}" method="POST" >      
         <fieldset class="checkbox">
           <legend><b>Make your plastic Pledges for this week!</b></legend>
    
@@ -73,17 +73,7 @@
       </form>
     </div><!--END FORM-->
 
-<!--PLEDGE RESULTS-->
-    <!--
-    {% if pledgesresult %}
-      <p class="centre"> Your pledges for this week are :</p> 
-        {%for each in pledgesresult%}
-        <p>{{each}}</p>
-        {%endfor%}
-    {% endif %} -->
-<!-- pledges display removed -->
-<!--END PLEDGE RESULTS-->         
-    
+
     
 </body>
 
