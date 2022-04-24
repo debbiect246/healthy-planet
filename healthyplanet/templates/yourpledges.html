@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %} 
+
+<body>
+
+        
+    {% if pledgesresult %}
+      <h3> Your pledges are :</h3> 
+        {%for each in pledgesresult%}
+        <p>{{each}}</p>
+        {%endfor%}
+    {% endif %}
+</body>
+
+{% endblock %}
