@@ -16,8 +16,7 @@
 - [User Experience](#user-experience)
     - [User Stories](#user-stories)
     - [UXD User Experience Design](#uxd-user-experience-design)
-- [Initial Plan](#initial-plan)
-    - [Wireframes](#wireframes)
+- [Wireframes](#wireframes)
 - [Features](#features)
     - [Current Features](#current-features)
     - [Features Left to Implement](#features-left-to-implement)
@@ -57,34 +56,22 @@ Healthy Planet is a small project aimed to educate and entertain users wiith fac
 
 -   ### User stories
 
-    -   #### First Time Visitor Goals
-
-        1. As a First Time Visitor, I want to see stories about how plastic is polluting the environment.
-        2. As a First Time Visitor, I want to see inspiring stories about how plastic is being recycled and reused in the world.
-        3. As a First Time Visitor, I want to test my knowledge of plastic recylcing and reuse using a quiz.
-        4. As a First Time Visitor, I want to be able to make pledges about how to reduce and recycle my use of plastic.
-        5. As a First Time Visitor, I want my pledges emailed to me shortly after I make them.
-        
-
-    -   #### Returning Visitor Goals
-
-        1. As a Returning Visitor, I want to 
-        1. As a Returning Visitor, I want to 
-        1. As a Returning Visitor, I want to 
-
-    -   #### Frequent User Goals
-        1. As a Frequent User, I want to
-        1. As a Frequent User, I want to
-        1. As a Frequent User, I want to 
-
+        1. As a user of plastic, I want to learn about how plastic is polluting the environment, so that I can educate myself on my environmental impact.
+        2. As a person who doesn't think I can help the environment, I want to see inspiring stories about how plastic is being recycled and reused in the world, so that I too can help in some way.
+        3. As a quiz lover, I'd like to test out the knowledge I have learned on the site, so see how much I remember.
+        4. As a person who struggles to commit to changes, I'd like some accountability and ideas as to how I can help the environment.
+        5. As a forgetful person, I'd like the above pledges to be emailed to me to help me keep track of them.
 -   ### UXD User Experience Design
 
     -   #### Colour Scheme
+        Though not all about the ocean, a significant portion of plastic waste ends up in the sea, therefore a mix of blue tones with an off white brings the project together and keeps it's theme well.
 
+        ![Colour Scheme](healthyplanet/static/readme-content/images/Color-Palettes-for-Websites-Images-Environment5.jpg)
     -   #### Typography
+        [Roboto](https://fonts.google.com/specimen/Roboto) was used throughout the site for its clear style, and well established use.
 
-### Wireframes
-
+## Wireframes
+    - 
 
 ## Features
 
