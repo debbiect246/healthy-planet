@@ -5,15 +5,81 @@ Your Pledges - Healthy Planet
 {% endblock %}
 {% block content %}
 
-	{% if pledgesresult %}
-	<div class="container quiz-box">
-		<h2 class="text-center"> Your Pledges Are:</h2>
-		<ol class="list-group list-group-numbered">
-			{% for each in pledgesresult %}
-			<li class="list-group-item list-group-item-success list-group-item-action">{{each}}</li>
-			{%endfor%}
-		</ol>
-	</div>
-	{% endif %}
+{% if pledgesresult %}
+<div class="container quiz-box">
+	<h2 class="text-center"> Your Pledges Are:</h2>
+	<ol class="list-group list-group-numbered">
+		{% for each in pledgesresult %}
+		<li class="list-group-item list-group-item-success list-group-item-action">{{each}}</li>
+		{%endfor%}
+	</ol>
+</div>
+{% endif %}
 
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6 card mx-auto p-3 mb-5 text-center shadow-lg">
+			<p>If you'd like us to email your pledges to you as a reminder, enter your name and email address below.</p>
+			<form id="pledge-form">
+				<label for="to_name" class="form-label">Name</label>
+				<input type="text" name="to_name" class="form-control" >
+				<label for="to_email" class="form-label">Email</label>
+				<input type="email" name="to_email" class="form-control" >
+				<label for="message" class="hidden">Message</label>
+				<textarea name="message" class="hidden" >
+					{%- for each in pledgesresult -%}{{each}}&#13;&#10; {%- endfor -%}
+					</textarea>
+				<input type="submit" class="btn btn-secondary" value="Send">
+			</form>
+			<div class="mt-2" id="email-feedback"></div>
+		</div>
+	</div>
+</div>
+
+<!-- Feedback Modal -->
+<div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="modalText" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalText"></h5>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+	(function () {
+		// https://dashboard.emailjs.com/admin/account
+		emailjs.init('{{ PUBLIC_KEY }}');
+	})();
+</script>
+<script type="text/javascript">
+	window.onload = function () {
+		document.getElementById('pledge-form').addEventListener('submit', function (event) {
+			event.preventDefault();
+			// these IDs from the previous steps
+			emailjs.sendForm('{{ EMAIL_SERVICE }}', '{{ EMAIL_TEMPLATE }}', this)
+				.then(function () {
+					// change modal text
+					$('#modalText').html("Thanks for your pledge! We've emailed it to you.")
+					// show modal
+					$('#emailModal').modal('show');
+					console.log('SUCCESS!');
+				}, function (error) {
+					// change modal text
+					$('#modalText').html("Oops. Something went wrong. Please try again.")
+					// show modal
+					$('#emailModal').modal('show');
+					console.log('FAILED...', error);
+				});
+		});
+	}
+</script>
 {% endblock %}
