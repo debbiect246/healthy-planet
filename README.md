@@ -161,7 +161,7 @@ Credits for images used are shown below.
 6.  Photo by Markus Spiske on Unsplash  no planet B
 7.  Photo by Photo Boards on Unsplash  planet earth first
 8.  Photo by Markus Spiske on Unsplash  not easy being green
-
+9.  Photo by aitoff on pixabay of [plastic bottle in water](https://pixabay.com/photos/bottle-waste-pollution-garbage-2349126/) 
 
 
 ### Code
@@ -174,7 +174,7 @@ During the hackathon automatic deployment to heroku was not available so Rocky p
 
 3.  Tom worked on the quiz page using javascript. Rocky helping to fix a couple of bugs relating to displaying the results properly. Liam added modals to show answer feedback between each question.
 
-4.  Liam worked on the plastics information page, adding images and styling. Coding for this was done in HTML and CSS.
+4.  Liam worked on the plastic facts and success stories pages. The layouts for these pages were designed using the Bootstrap 5 framework classes and some custom CSS. Interactive graphs on the plastic facts page were implemented in Javascript using the [Chart.js](https://www.chartjs.org/) library. The [ChartJS Deferred Plugin](https://github.com/chartjs/chartjs-plugin-deferred) was used to delay chart initialization animations until visible. The SVG vector illustrations were drawn using [Affinity Designer](https://affinity.serif.com/en-gb/designer/).
 
 5.  Debbie worked on the wireframes using [balsamiq](https://balsamiq.com/wireframes/) and pledges page.  The logic for the pledges page was added into the routes.py file which Rocky had set up initially then a form was added to pledges.html and a pledgesresult.html file was added to display the pledges made by the user to the user on a separate page.  Tom and Rocky helped with the logic for the pledges and thanks especially to Rocky for coming up with the most elegant and effective way of getting the back end data to the frond end.
 
