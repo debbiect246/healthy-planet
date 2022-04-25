@@ -1,6 +1,8 @@
 # Healthy Planet
 
 ## Code Institute EARTH DAY 2022 Hackathon
+
+![Multi Device Image](healthyplanet/static/readme-content/images/multi-device-shot.png)
 ## Live Site
 
 [Healthy Planet](https://healthy-planet.herokuapp.com/) CMD/Control + Click to open in a new tab
