@@ -61,6 +61,10 @@ footer {
   color: #178ca4;
 }
 
+.color-icon:hover {
+  color: #072a40;
+}
+
 /* INDEX PAGE STYLES */
 .bg-s1 {
   background: url("/static/images/hero-img-full.jpg") no-repeat center center;

@@ -71,12 +71,14 @@ Healthy Planet is a small project aimed to educate and entertain users wiith fac
         [Roboto](https://fonts.google.com/specimen/Roboto) was used throughout the site for its clear style, and well established use.
 
 -   ### Wireframes
-    - 
+    - [Wireframes - Seperate Document](healthyplanet/static/readme-content/wireframes.md)
 
 ## Features
 
+
 ### Current Features
 
+- [Features - Seperate Document](healthyplanet/static/readme-content/features.md)
 ### Features Left to Implement
 
 We thought about how to improve the app.  Some ideas were:
@@ -148,7 +150,7 @@ Credits for images used are shown below.
 Code was written by different team members and different aspects as shown.
 1.  Rocky got the repo up initially, later the repo was transferred to Debbie.
 2.  Rocky deployed the site to heroku and periodically pushed code to heroku as there were issues at heroku's end with automatic deployment.
-3.  Tom worked on the quiz page using javascript, with Rocky helping to fix a couple of bugs.
+3.  Tom worked on the quiz page using javascript. Rocky helping to fix a couple of bugs relating to displaying the results properly. Liam added modals to show answer feedback between each question.
 4.  Liam worked on the plastics information page, adding images and styling.
 5.  Debbie worked on the wireframes and pledges page.
 6.  Rocky worked on responsiveness and inserted the emailjs script for the pledges to be emailed to the user.

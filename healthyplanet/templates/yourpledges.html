@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
-{% block content %} 
+{% set hero_title = "Your Pledges" %}
+{% block content %}
 
-<body>
-
-        
-    {% if pledgesresult %}
-      <h3> Your pledges are :</h3> 
-        {% for each in pledgesresult %}
-        <p>{{each}}</p>
-        {%endfor%}
-    {% endif %}
-</body>
+	{% if pledgesresult %}
+	<div class="container quiz-box">
+		<h2 class="text-center"> Your Pledges Are:</h2>
+		<ol class="list-group list-group-numbered">
+			{% for each in pledgesresult %}
+			<li class="list-group-item list-group-item-success list-group-item-action">{{each}}</li>
+			{%endfor%}
+		</ol>
+	</div>
+	{% endif %}
 
 {% endblock %}
