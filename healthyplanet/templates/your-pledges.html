@@ -14,28 +14,35 @@ Your Pledges - Healthy Planet
 		<li class="list-group-item list-group-item-success list-group-item-action">{{each}}</li>
 		{%endfor%}
 	</ol>
-</div>
-{% endif %}
 
-<div class="container">
-	<div class="row">
+	<div class="row mt-4">
 		<div class="col-sm-6 card mx-auto p-3 mb-5 text-center shadow-lg">
 			<p>If you'd like us to email your pledges to you as a reminder, enter your name and email address below.</p>
 			<form id="pledge-form">
 				<label for="to_name" class="form-label">Name</label>
-				<input type="text" name="to_name" class="form-control" >
+				<input type="text" name="to_name" class="form-control mb-4" >
 				<label for="to_email" class="form-label">Email</label>
 				<input type="email" name="to_email" class="form-control" >
 				<label for="message" class="hidden">Message</label>
 				<textarea name="message" class="hidden" >
 					{%- for each in pledgesresult -%}{{each}}&#13;&#10; {%- endfor -%}
 					</textarea>
-				<input type="submit" class="btn btn-secondary" value="Send">
 			</form>
+
+			<div class="text-center">
+				<input type="submit" form="pledge-form"class="btn btn-lg btn-secondary" value="Send">
+			</div>
 			<div class="mt-2" id="email-feedback"></div>
 		</div>
 	</div>
 </div>
+
+
+{% endif %}
+
+
+	
+
 
 <!-- Feedback Modal -->
 <div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="modalText" aria-hidden="true">
