@@ -111,7 +111,7 @@ All testing was done manually.
 
 ### Code Validation
 
-HTML code was validated using the  W3C [HTML Validator](https://validator.w3.org/nu/).
+HTML code was validated using the W3C [HTML Validator](https://validator.w3.org/nu/).
 
 |         Page         |                                      Screenshot                                     |
 |:--------------------:|:-----------------------------------------------------------------------------------:|
@@ -123,6 +123,16 @@ HTML code was validated using the  W3C [HTML Validator](https://validator.w3.org
 | Success Stories Page | ![](healthyplanet/static/readme-content/images/validation/html-your-pledges.jpg)    |
 
 HTML validation returned no errors. The quiz page returned three warnings, but these are related to elements of the page which are empty to start with but have content added later using javascript.
+
+CSS code was validated using the W3C CSS Validator.
+
+|    File   |                             Screenshot                             |
+|:---------:|:------------------------------------------------------------------:|
+| style.css | ![](healthyplanet/static/readme-content/images/validation/css.jpg) |
+
+CSS validation returned no errors.
+
+
 
 ### Manual Testing
 
