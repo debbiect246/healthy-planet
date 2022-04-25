@@ -109,6 +109,21 @@ We thought about how to improve the app.  Some ideas were:
 
 All testing was done manually.
 
+### Code Validation
+
+HTML code was validated using the  W3C [HTML Validator](https://validator.w3.org/nu/).
+
+|         Page         |                                      Screenshot                                     |
+|:--------------------:|:-----------------------------------------------------------------------------------:|
+| Home Page            | ![](healthyplanet/static/readme-content/images/validation/html-home.jpg)            |
+| Plastic Facts Page   | ![](healthyplanet/static/readme-content/images/validation/html-plastic-facts.jpg)   |
+| Pledges Page         | ![](healthyplanet/static/readme-content/images/validation/html-pledges.jpg)         |
+| Your Pledges Page    | ![](healthyplanet/static/readme-content/images/validation/html-quiz.jpg)            |
+| Quiz Page            | ![](healthyplanet/static/readme-content/images/validation/html-success-stories.jpg) |
+| Success Stories Page | ![](healthyplanet/static/readme-content/images/validation/html-your-pledges.jpg)    |
+
+HTML validation returned no errors. The quiz page returned three warnings, but these are related to elements of the page which are empty to start with but have content added later using javascript.
+
 ### Manual Testing
 
 As each person coded part of a page or feature they tested it displayed as correctly or worked as planned.  Others in the group were also able to verify that each feature worked as planned and that the site displayed as planned.
