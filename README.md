@@ -132,7 +132,14 @@ CSS code was validated using the W3C CSS Validator.
 
 CSS validation returned no errors.
 
+Python code was validated with [PEP8 Online](http://pep8online.com/).
 
+|    File   |                                  Screenshot                                  |
+|:---------:|:----------------------------------------------------------------------------:|
+| routes.py | ![](healthyplanet/static/readme-content/images/validation/python-routes.jpg) |
+| run.py    | ![](healthyplanet/static/readme-content/images/validation/python-run.jpg)    |
+
+Python validation returned no errors.
 
 ### Manual Testing
 
