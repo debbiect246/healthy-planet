@@ -38,7 +38,7 @@ def yourpledges():
     data = request.args.get('pledgesresult').split(',')
     return render_template('yourpledges.html', pledgesresult=data)
 
-@app.route("/environmental-stories")
-def environmental_stories():
+@app.route("/success-stories")
+def success_stories():
     """ Basic route """
-    return render_template("environmental-stories.html")
+    return render_template("success-stories.html")
