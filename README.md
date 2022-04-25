@@ -141,7 +141,23 @@ CSS code was validated using the W3C CSS Validator.
 
 CSS validation returned no errors.
 
+Python code was validated with [PEP8 Online](http://pep8online.com/).
 
+|    File   |                                  Screenshot                                  |
+|:---------:|:----------------------------------------------------------------------------:|
+| routes.py | ![](healthyplanet/static/readme-content/images/validation/python-routes.jpg) |
+| run.py    | ![](healthyplanet/static/readme-content/images/validation/python-run.jpg)    |
+
+Python validation returned no errors.
+
+Javascript code was validated with [JSHint](https://jshint.com/).
+
+|      File     |                                Screenshot                               |
+|:-------------:|:-----------------------------------------------------------------------:|
+| facts.js      | ![](healthyplanet/static/readme-content/images/validation/js-facts.jpg) |
+| run.pyquiz.js | ![](healthyplanet/static/readme-content/images/validation/js-quiz.jpg)  |
+
+The facts.js file returned some warnings about undefined variables and unused variables. The undefined variables were defined in the chart and chart deferred plugins. The unused variables were used to initialise the charts on the page. 
 
 ### Manual Testing
 

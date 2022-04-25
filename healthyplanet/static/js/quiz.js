@@ -99,7 +99,7 @@ $(function () {
 			"optionD": "You may find a raccoon named Nyla lounging in it because she loves plastic so much she can't help herself. Plus, she's been on her feet all day and frankly is exhausted. She's just saying.  ",
 			"answer": "The recycle truck may not pick it up."
 		}
-	]
+	];
 	const lastQuestion = questions.length;
 	let runningQuestion = 0;
 	let score = 0;
@@ -117,7 +117,7 @@ $(function () {
 	 */
 	function displayQuestion() {
 		if (runningQuestion < lastQuestion) {
-			const questionArray = questions[runningQuestion]
+			const questionArray = questions[runningQuestion];
 			$("#home-page").addClass("hidden");
 			$("#quiz-page").removeClass("hidden");
 			$("#start-again-btn-div").removeClass("hidden");
@@ -143,7 +143,7 @@ $(function () {
 				<label class="answer-option" for="option-4">
 				<span data-hover="${questionArray.optionD}">${questionArray.optionD}</span>
 				</label>
-			`)
+			`);
 			} else if (questionArray.type === "tf") {
 				$('#answer-options').html(`
 				<input class="answer-option" type="radio" name="answers" id="option-1" value="${questionArray.optionA}"required>
@@ -154,8 +154,8 @@ $(function () {
 				<label class="answer-option" for="option-2">							
 				<span data-hover="${questionArray.optionB}">${questionArray.optionB}</span>
 				</label>
-			`)
-			};
+			`);
+			}
 		}
 	}
 
@@ -193,18 +193,18 @@ $(function () {
 		 * If answer is incorrect return true because have select an answer but the answer is incorrect.
 		 */
 		function checkAnswerResult() {
-			const questionArray = questions[runningQuestion]
+			const questionArray = questions[runningQuestion];
 			if (!$("input:checked").val()) {
 				// if answer is empty, show modal and return false
 				// change modal text
-				$('#modalText').text("Oops! Please pick an option and try again!")
+				$('#modalText').text("Oops! Please pick an option and try again!");
 				// show modal
 				$('#quizModal').modal('show');
 				return false;
 			} else if ($("input:checked").val() == questionArray.answer) {
 				// if answer is correct, show modal add a score and return true
 				// change modal text
-				$('#modalText').text("Well done! That's the right answer!")
+				$('#modalText').text("Well done! That's the right answer!");
 				// show modal
 				$('#quizModal').modal('show');
 				score += 1;
@@ -212,7 +212,7 @@ $(function () {
 			}
 			// if answer is checked but not correct,show modal and return true
 			// change modal text
-			$('#modalText').html("Sorry, that's the wrong answer.<br>The right answer was: " + questionArray.answer)
+			$('#modalText').html("Sorry, that's the wrong answer.<br>The right answer was: " + questionArray.answer);
 			// show modal
 			$('#quizModal').modal('show');
 			return true;
@@ -229,9 +229,9 @@ $(function () {
 			$('#results-page').html(`
 			<h2>Congratulations on finishing the Quiz!</h2>
             <p id="final-score">You scored ${score} out of ${lastQuestion}</p>
-			<button id="return-to-menu-btn" class="btn btn-primary btn-block">Start Again</button>`)
+			<button id="return-to-menu-btn" class="btn btn-primary btn-block">Start Again</button>`);
 			$("#return-to-menu-btn").click(function () {
-				startAgainFromMenu()
+				startAgainFromMenu();
 			});
 		}
 
@@ -251,6 +251,6 @@ $(function () {
 
 		// Event listener to restart the quiz if "start again" button is clicked
 		$("#start-again-btn").click(function () {
-			startAgainFromMenu()
+			startAgainFromMenu();
 		});
 });
