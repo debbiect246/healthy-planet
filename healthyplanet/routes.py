@@ -32,7 +32,7 @@ def pledges():
     if request.method == "POST":
         pledgesresult = request.form.getlist('pledges')
         return render_template(
-            'yourpledges.html',
+            'your-pledges.html',
             pledgesresult=pledgesresult,
             PUBLIC_KEY=os.environ.get('PUBLIC_KEY'),
             EMAIL_TEMPLATE=os.environ.get('EMAIL_TEMPLATE'),
