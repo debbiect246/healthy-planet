@@ -29,14 +29,14 @@ def pledges():
     pledgesresult=[]
     if request.method == "POST":
         pledgesresult = request.form.getlist('pledges')
-        return redirect(url_for('yourpledges', pledgesresult=','.join(pledgesresult)))
+        return redirect(url_for('your_pledges', pledgesresult=','.join(pledgesresult)))
     return render_template('pledges.html', pledgesresult=pledgesresult)
 
 #displays pledges made to user
-@app.route('/yourpledges/',methods=["GET", "POST"])
-def yourpledges():
+@app.route('/your-pledges/',methods=["GET", "POST"])
+def your_pledges():
     data = request.args.get('pledgesresult').split(',')
-    return render_template('yourpledges.html', pledgesresult=data)
+    return render_template('your-pledges.html', pledgesresult=data)
 
 @app.route("/success-stories")
 def success_stories():
