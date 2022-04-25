@@ -133,4 +133,4 @@ $(document).ready(function () {
             }
         }
     });
-})
+});
