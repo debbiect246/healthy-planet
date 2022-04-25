@@ -8,33 +8,42 @@
 </section>
 <section class="container-fluid min-vh-100 px-0 bg-s2">
     <div class="min-vh-100 d-flex justify-content-center align-items-center">
-        <ul class="fs-5 section-content text-light">
-            <li>Plastics affect ecosystems that we rely on to provide food.</li>
-            <li>We all need to find a solution to reduce our reliance on plastics in our daily life.</li>
-            <li>If we can't avoid using plastic, we have to find a way to recycle it, or dispose of it properly.</li>
+        <ul class="section-content text-light">
+            <li class="mb-5 mb-md-3">Plastics affect ecosystems that we rely on to provide food.</li>
+            <li class="mb-5 mb-md-3">We all need to find a solution to reduce our reliance on plastics in our daily
+                life.</li>
+            <li class="mb-5 mb-md-3">If we can't avoid using plastic, we have to find a way to recycle it, or dispose of
+                it properly.</li>
         </ul>
     </div>
 </section>
 <section class="container-fluid min-vh-100 px-0 bg-s3">
     <div class="min-vh-100 d-flex justify-content-center align-items-center">
-        <p class="fs-5 section-content text-light">
-            Take a look around for some ideas on how archive our goal.<br>
-            Maybe you can think about pledging to reduce your use of plastic.<br>
-            Try to take a quiz on your use of plastic after looking at some facts about the use of plastic on the
-            planet.
-        </p>
+        <div class="section-content text-light s3-layer">
+            <p class="mb-5 mb-md-3">
+                Take a look around for some ideas on how archive our goal.
+            </p>
+            <p class="mb-5 mb-md-3">
+                Maybe you can think about pledging to reduce your use of plastic.</p>
+            <p class="mb-5 mb-md-3">
+                Looking at some facts about the use of plastic on the plane,<br>
+                and try to take a quiz to test your knowledge.
+            </p>
+        </div>
     </div>
 </section>
 <section class="container-fluid min-vh-100 px-0">
     <div class="min-vh-100 d-flex flex-column justify-content-center align-items-center">
-        <img id="s3-img" src="{{url_for('static', filename='images/planet-earth-in-our-hands.webp')}}"
+        <div class="section-content text-light text-center">
+        <p class="mb-5 mb-md-3 text-start">
+            Application inspired by Earth day 2022 to help others.<br>
+        </p>
+        <p class="mb-5 mb-md-3 text-start">
+            Created by coders during the Code Institute April 2022 Hackathon.
+        </p>
+        <img id="s3-img"src="{{url_for('static', filename='images/planet-earth-in-our-hands.webp')}}"
             alt="planet and earth are in our hand" />
-        <p class="fs-6">
-            The application was inspired by Earth day 2022 to help others.<br>
-        </p>
-        <p class="fs-6">
-            And was created by five coders during the Code Institute April 2022 Hackathon.
-        </p>
+    </div>
     </div>
 </section>
 {% endblock%}
