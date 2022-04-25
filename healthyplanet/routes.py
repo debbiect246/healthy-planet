@@ -7,6 +7,7 @@ from healthyplanet import app
 if os.path.exists("env.py"):
     import env
 
+
 @app.route("/")
 def index():
     """ Basic route """
@@ -40,6 +41,7 @@ def pledges():
             EMAIL_SERVICE=os.environ.get('EMAIL_SERVICE'),
             )
     return render_template('pledges.html', pledgesresult=pledgesresult)
+
 
 @app.route("/success-stories")
 def success_stories():
