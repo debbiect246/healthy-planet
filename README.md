@@ -22,25 +22,12 @@
   - [Features Left to Implement](#features-left-to-implement)
 - [Technologies Used](#technologies-used)
   - [Languages](#languages)
-  - [Other Technologies](#other-technologies)
 - [Testing](#testing)
   - [Code Validation](#code-validation)
-  - [Testing User Stories](#testing-user-stories)
-    - [First Time Visitor Goals](#first-time-visitor-goals)
-    - [Returning Visitor Goals](#returning-visitor-goals)
-    - [Frequent User Goals](#frequent-user-goals)
-  - [Further Testing](#further-testing)
-  - [Lighthouse Results](#lighthouse-results)
-    - [Mobile](#mobile)
-    - [Desktop](#desktop)
-- [Bugs](#bugs)
-  - [Known Bugs](#known-bugs)
-  - [Fixed Bugs](#fixed-bugs)
 - [Deployment](#deployment)
-  - [Github Pages](#github-pages)
+  - [Heroku](#heroku)
 - [Credits](#credits)
   - [Code](#code)
-  - [Future Enhancements](#future enhancements)
   - [Acknowledgements](#acknowledgements)
 ***
 
@@ -50,31 +37,36 @@ The purpose of this project is to work together in a small Agile team, to build 
 
 ## Objective
 
-Healthy Planet is a small project aimed to educate and entertain users wiith facts and games relating to Earth Day and how you can do your bit to improve the planets health. The main feature of the project is an interactive quiz to test users' knowledge on plastic recycling best practices. The site also features some truths and myths about recycling, along with stories of how people have done their bit for the planet.
+Healthy Planet is a small project aimed to educate and entertain users wiith facts and games relating to Earth Day and how you can do your bit to improve the planets health. We chose to focus on plastic pollution as it is one of the largest environmental issues facing the world today. The main feature of the project is an interactive quiz to test users' knowledge on plastic recycling best practices. The site also features some truths and myths about plastic, along with stories of how people have done their bit for the planet.
 
 ## User Experience
 
--  ### User stories
+### User stories
 
-    1. As a user of plastic, I want to learn about how plastic is polluting the environment, so that I can educate myself on my environmental impact.
-    2. As a person who doesn't think I can help the environment, I want to see inspiring stories about how plastic is being recycled and reused in the world, so that I too can help in some way.
-    3. As a quiz lover, I'd like to test out the knowledge I have learned on the site, so see how much I remember.
-    4. As a person who struggles to commit to changes, I'd like some accountability and ideas as to how I can help the environment.
-    5. As a forgetful person, I'd like the above pledges to be emailed to me to help me keep track of them.
--  ### UXD User Experience Design
+1. As a user of plastic, I want to learn about how plastic is polluting the environment, so that I can educate myself on my environmental impact.
+2. As a person who doesn't think I can help the environment, I want to see inspiring stories about how plastic is being recycled and reused in the world, so that I too can help in some way.
+3. As a quiz lover, I'd like to test out the knowledge I have learned on the site, so see how much I remember.
+4. As a person who struggles to commit to changes, I'd like some accountability and ideas as to how I can help the environment.
+5. As a forgetful person, I'd like the above pledges to be emailed to me to help me keep track of them.
 
-  -  #### Colour Scheme
-    Though not all about the ocean, a significant portion of plastic waste ends up in the sea, therefore a mix of blue tones with an off white brings the project together and keeps it's theme well.
+### UXD User Experience Design
 
-    ![Colour Scheme](healthyplanet/static/readme-content/images/Color-Palettes-for-Websites-Images-Environment5.jpg)
-  -  #### Typography
-    [Roboto](https://fonts.google.com/specimen/Roboto) was used throughout the site for its clear style, and well established use.
+#### Colour Scheme
 
--  ### Wireframes
-  - [Wireframes - Seperate Document](healthyplanet/static/readme-content/wireframes.md)
+Though not all about the ocean, a significant portion of plastic waste ends up in the sea, therefore a mix of blue tones with an off white brings the project together and keeps its theme well.
+
+<img width="500px" src="healthyplanet/static/readme-content/images/Color-Palettes-for-Websites-Images-Environment5.jpg">
+
+Source: [Shutterstock](https://www.shutterstock.com/blog/color-palettes-for-websites)
+
+#### Typography
+
+[Roboto](https://fonts.google.com/specimen/Roboto) was used throughout the site for its clear style, and well established use.
+
+### Wireframes
+[Wireframes - Seperate Document](healthyplanet/static/readme-content/wireframes.md)
 
 ## Features
-
 
 ### Current Features
 
@@ -84,14 +76,14 @@ Healthy Planet is a small project aimed to educate and entertain users wiith fac
 
 We thought about how to improve the app. Some ideas were:
 1. To have an authentication system so that users pledges could be stored there for retrieval later.
-1. To have a profile for each user so that they could see the pledges they had made over a set time period.
-1. Add automated testing maybe using unit testing module in python.
-1. Add log in functionality to the app so that each user can keep track of their pledges.
-1. Connect the app to a database to store user details and pledges.
-1. Add a blog Îso that users can share environmental stories and upload images.
-1. Add automatic testing and continuous integration.
-1. Add a contact form so that users can contact developers with ideas for improvement.
-1. Add a leaderboard to the quiz so users can see how they did against others.
+2. To have a profile for each user so that they could see the pledges they had made over a set time period.
+3. Add automated testing maybe using unit testing module for python and jest for javascript.
+4. Add log in functionality to the app so that each user can keep track of their pledges.
+5. Connect the app to a database to store user details and pledges.
+6. Add a blog Îso that users can share environmental stories and upload images.
+7. Add automatic testing and continuous integration.
+8. Add a contact form so that users can contact developers with ideas for improvement.
+9. Add a leaderboard to the quiz so users can see how they did against others.
 
 ## Technologies Used
 
@@ -101,17 +93,17 @@ We thought about how to improve the app. Some ideas were:
 
 ### Languages
 
-* We used[bootstrap 5](https://getbootstrap.com/) for responsiveness.
+* [Bootstrap 5](https://getbootstrap.com/) used for styling and responsiveness.
  
-* generating web pages from HTML templates with [Jinja](https://jinja.palletsprojects.com/) 
+* [Jinja](https://jinja.palletsprojects.com/) used to generate web pages from HTML templates. 
 
-* [python ](https://www.python.org/)is a programming language widely used on the internet with web frameworks to create apps.
+* [Python](https://www.python.org/) and [Flask](https://flask.palletsprojects.com/) used for the application backend.
 
-* [html ](https://devdocs.io/html/)stands for HyperText MarkUp Language and is used to put content and structure on a web page.
+* [HTML](https://devdocs.io/html/) stands for HyperText MarkUp Language and is used to put content and structure on a web page.
 
 * [CSS](https://devdocs.io/css/) stands for cascading style sheets and is used to style a webpage.
 
-* [Javascript ](https://www.w3schools.com/js/DEFAULT.asp)is used to implement interactivity on the site.
+* [Javascript](https://www.w3schools.com/js/DEFAULT.asp) is used to implement interactivity on the site.
 
 
 ## Testing
@@ -162,8 +154,6 @@ The facts.js file returned some warnings about undefined variables and unused va
 ### Manual Testing
 
 As each person coded part of a page or feature they tested it displayed as correctly or worked as planned. Others in the group were also able to verify that each feature worked as planned and that the site displayed as planned.
-
-### Further Testing
 
 ## Deployment
 
