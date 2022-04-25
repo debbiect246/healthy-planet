@@ -2,8 +2,10 @@
 
 from flask import render_template, request, url_for, redirect
 
+import os
 from healthyplanet import app
-
+if os.path.exists("env.py"):
+    import env
 
 @app.route("/")
 def index():
@@ -23,20 +25,21 @@ def quiz():
     return render_template("quiz.html")
 
 
-@app.route("/pledges", methods=["GET","POST"])
+@app.route("/pledges", methods=["GET", "POST"])
 def pledges():
     """pledges logic"""
-    pledgesresult=[]
+    pledgesresult = []
     if request.method == "POST":
         pledgesresult = request.form.getlist('pledges')
-        return redirect(url_for('yourpledges', pledgesresult=','.join(pledgesresult)))
+        return render_template(
+            'your-pledges.html',
+            pledgesresult=pledgesresult,
+            PUBLIC_KEY=os.environ.get('PUBLIC_KEY'),
+            EMAIL_TEMPLATE=os.environ.get('EMAIL_TEMPLATE'),
+            EMAIL_SERVICE=os.environ.get('EMAIL_SERVICE'),
+            )
     return render_template('pledges.html', pledgesresult=pledgesresult)
 
-#displays pledges made to user
-@app.route('/yourpledges/',methods=["GET", "POST"])
-def yourpledges():
-    data = request.args.get('pledgesresult').split(',')
-    return render_template('yourpledges.html', pledgesresult=data)
 
 @app.route("/success-stories")
 def success_stories():
