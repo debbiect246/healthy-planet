@@ -3,32 +3,8 @@
 {% set hero_title = "Plastics Pledge" %}
 {% block content %}
 
-<div class="text-center">
-
-	{% if pledgesresult %}
-	<h2>You've chosen some great pledges!</h2>
-	<p>Your pledges to reduce/recycle your use of plastic are:</p>
-	{%for each in pledgesresult%}
-	<h5>
-		<p> * {{each}}</p>
-	</h5>
-
-	{%endfor%}
-
-	{% endif %}
-
-
-	<!--Select items to pledge for this week.-->
-	<div class="text-center">
-		<h2>Select your pledge actions from the following items.</h2>
-		<h4>Press Enter Pledges to see your pledges.</h4>
-	</div>
-
-</div>
-
-<br>
-
 <div class="container quiz-box text-center">
+	<h2>Select your pledge actions from the following items.</h2>
 	<form id="pledges-form" action="{{url_for('pledges')}}" method="POST">
 		<fieldset class="checkbox">
 			<legend class="text-center">Make your plastic Pledges for this week!</legend>
@@ -103,7 +79,10 @@
 			<br>
 		</fieldset>
 	</form>
-	<button type="submit" form="pledges-form" class="btn btn-primary btn-block btn-lg">Enter Your Pledges</button>
+	<div class="text-center">
+		<button type="submit" form="pledges-form" class="btn btn-primary btn-block btn-lg">Enter Your Pledges</button>
+	</div>
+
 </div>
 <!--END FORM-->
 

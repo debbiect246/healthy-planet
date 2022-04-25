@@ -71,9 +71,10 @@ Healthy Planet is a small project aimed to educate and entertain users wiith fac
         [Roboto](https://fonts.google.com/specimen/Roboto) was used throughout the site for its clear style, and well established use.
 
 -   ### Wireframes
-    - 
+    - [Wireframes - Seperate Document](healthyplanet/static/readme-content/wireframes.md)
 
 ## Features
+
 
 ### Current Features
 
