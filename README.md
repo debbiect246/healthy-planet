@@ -141,6 +141,15 @@ Python code was validated with [PEP8 Online](http://pep8online.com/).
 
 Python validation returned no errors.
 
+Javascript code was validated with [JSHint](https://jshint.com/).
+
+|      File     |                                Screenshot                               |
+|:-------------:|:-----------------------------------------------------------------------:|
+| facts.js      | ![](healthyplanet/static/readme-content/images/validation/js-facts.jpg) |
+| run.pyquiz.js | ![](healthyplanet/static/readme-content/images/validation/js-quiz.jpg)  |
+
+The facts.js file returned some warnings about undefined variables and unused variables. The undefined variables were defined in the chart and chart deferred plugins. The unused variables were used to initialise the charts on the page. 
+
 ### Manual Testing
 
 As each person coded part of a page or feature they tested it displayed as correctly or worked as planned.  Others in the group were also able to verify that each feature worked as planned and that the site displayed as planned.
