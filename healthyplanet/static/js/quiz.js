@@ -8,7 +8,7 @@ $(function () {
 		},
 		{
 			"type": "multi",
-			"title": "In 2020, how many tonnes of plastic wer produced?",
+			"title": "In 2020, how many tonnes of plastic were produced?",
 			"optionA": "257 Million",
 			"optionB": "482 Million",
 			"optionC": "367 Million",
@@ -30,8 +30,8 @@ $(function () {
 			"optionA": "A Carrier Bag",
 			"optionB": "A Straw",
 			"optionC": "A Bottle",
-			"optionD": "A Tootbrush",
-			"answer": "A Tootbrush"
+			"optionD": "A Toothbrush",
+			"answer": "A Toothbrush"
 		}, {
 			"type": "tf",
 			"title": "55% of all plastic ever produced has been thrown away",

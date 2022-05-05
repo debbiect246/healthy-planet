@@ -85,14 +85,12 @@ footer {
 }
 
 .bg-s2 {
-  background: url("/static/images/plastics-on-beach.webp") no-repeat center
-    center;
+  background: url("/static/images/plastics-on-beach.webp") no-repeat center center;
   background-size: cover;
 }
 
 .bg-s3 {
-  background: url("/static/images/holding-plastic-on-beach.webp") no-repeat
-    center center;
+  background: url("/static/images/holding-plastic-on-beach.webp") no-repeat center center;
   background-size: cover;
 }
 
@@ -108,13 +106,14 @@ footer {
 }
 
 .s3-layer {
-  background: #212529!important;
+  background: #212529 !important;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 90;
   }
@@ -126,7 +125,7 @@ footer {
     font-size: 2.3rem;
   }
 
-  .section-content{
+  .section-content {
     height: auto;
     padding: 40px;
     font-size: 1.3rem;
@@ -205,8 +204,8 @@ form {
   visibility: hidden;
 }
 
-.answer-option:checked + label,
-.answer-option:not(:checked) + label {
+.answer-option:checked+label,
+.answer-option:not(:checked)+label {
   position: relative;
   display: inline-block;
   padding: 5px 2px;
@@ -220,17 +219,17 @@ form {
   transition: all 300ms linear;
 }
 
-.answer-option:not(:checked) + label {
+.answer-option:not(:checked)+label {
   background-color: #f9f7f0;
 }
 
-.answer-option:not(:checked):hover + label:hover {
+.answer-option:not(:checked):hover+label:hover {
   color: black;
   background-color: #18b7be;
 }
 
-.answer-option:checked + label::before,
-.answer-option:not(:checked) + label::before,
+.answer-option:checked+label::before,
+.answer-option:not(:checked)+label::before,
 .quiz-btn::before {
   position: absolute;
   content: "";
@@ -244,14 +243,14 @@ form {
   transition: all 300ms linear;
 }
 
-.answer-option:checked + label span,
-.answer-option:not(:checked) + label span {
+.answer-option:checked+label span,
+.answer-option:not(:checked)+label span {
   position: relative;
   display: block;
 }
 
-.answer-option:checked + label span::before,
-.answer-option:not(:checked) + label span::before,
+.answer-option:checked+label span::before,
+.answer-option:not(:checked)+label span::before,
 .quiz-btn::before {
   position: absolute;
   content: attr(data-hover);
@@ -264,12 +263,12 @@ form {
   transition: max-height 0.3s;
 }
 
-.answer-option:not(:checked) + label span::before,
+.answer-option:not(:checked)+label span::before,
 .quiz-btn::before {
   max-height: 0;
 }
 
-.answer-option:checked + label span::before,
+.answer-option:checked+label span::before,
 .quiz-btn::before {
   max-height: 100%;
 }
@@ -282,6 +281,13 @@ form {
 }
 
 /*        Media Queries                   */
+
+@media (max-width: 576px) {
+  .answer-option:checked+label,
+  .answer-option:not(:checked)+label {
+    width: 100%;
+  }
+}
 @media (min-width: 576px) {
   .hero-title {
     font-size: 4rem;
@@ -305,4 +311,3 @@ form {
     font-size: 10rem;
   }
 }
-
